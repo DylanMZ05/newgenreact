@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+#services {
+  scroll-margin-top: 75px;
+}
+
+#our-promise,
+#reviews {
+  scroll-margin-top: 150px;
+}
+
+#services,
+#our-promise,
+#who-we-are,
+#blogs,
+#contact {
+  scroll-margin-top: 50px;
+}
