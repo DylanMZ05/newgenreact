@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/new-gen-patio-react/",
+  base: "/",
   plugins: [react(), tailwindcss()],
 });
