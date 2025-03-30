@@ -1,14 +1,46 @@
 import { Link } from "react-router-dom";
+import BlockSection from "../../components/BlockSection";
 
 const ContactRedirect = () => {
   return (
-    <div className="min-h-screen bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] bg-cover bg-center">
-      <div className="bg-black/50 w-full h-full min-h-screen flex items-center justify-center px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+    <div className="bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] bg-cover bg-center">
+      <BlockSection />
+      <div className="bg-black/50 w-full min-h-[calc(100vh-80px)] flex items-center justify-center px-4 py-10 md:min-h-[calc(100vh-80px)]">
+        <div className="grid grid-cols-1 gap-6 w-full max-w-md md:max-w-6xl md:grid-cols-3">
           {[
-            { title: "Contact Us", desc: "Esta es la primera tarjeta", to: "/ruta1" },
-            { title: "Free Quote", desc: "Esta es la segunda tarjeta", to: "/ruta2" },
-            { title: "Tarjeta 3", desc: "Esta es la tercera tarjeta", to: "/ruta3" },
+            {
+              title: "Free Quote",
+              image: "/assets/images/Contact/James.png",
+              name: "James M.",
+              desc: (
+                <>
+                  <strong className="text-black/90">James M.</strong> quería una <strong className="text-black/90">cuota formal</strong> para su proyecto y rellenó nuestro <strong className="text-black/90">formulario personalizado</strong> en línea.
+                </>
+              ),
+              to: "/freequote",
+            },
+            {
+              title: "Contact Us",
+              image: "/assets/images/Contact/Emma.png",
+              name: "Emma G.",
+              desc: (
+                <>
+                  <strong className="text-black/90">Emma G.</strong> tenía algunas dudas y <strong className="text-black/90">contactó</strong> con nuestro <strong className="text-black/90">equipo de atención</strong> para aclararlas.
+                </>
+              ),
+              to: "/formpage",
+            },
+            {
+              title: "Financing",
+              image: "/assets/images/Contact/Isaiah.png",
+              name: "Iasiah T.",
+              desc: (
+                <>
+                  <strong className="text-black/90">Iasiah T.</strong> quería saber cómo <strong className="text-black/90">financiar su proyecto</strong> y siguió estos pasos.
+                </>
+              ),
+              to: "/calculator",
+            },
           ].map((card, index) => (
             <div
               key={index}
@@ -16,11 +48,16 @@ const ContactRedirect = () => {
             >
               <div>
                 <h2 className="text-xl font-bold mb-2">{card.title}</h2>
+                <img
+                  src={card.image}
+                  alt={card.name}
+                  className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+                />
                 <p className="text-gray-700 mb-4">{card.desc}</p>
               </div>
               <Link
                 to={card.to}
-                className="mt-auto mx-auto w-30 bg-blue-600 text-white text-sm text-center px-4 py-2 rounded-full hover:bg-blue-700 transition"
+                className="mt-auto mx-auto w-30 bg-orange-600 text-white font-semibold text-sm text-center px-4 py-2 rounded-full hover:bg-orange-500 transition"
               >
                 {card.title}
               </Link>
