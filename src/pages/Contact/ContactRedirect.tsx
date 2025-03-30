@@ -14,7 +14,7 @@ const ContactRedirect = () => {
               name: "James M.",
               desc: (
                 <>
-                  <strong className="text-black/90">James M.</strong> quería una <strong className="text-black/90">cuota formal</strong> para su proyecto y rellenó nuestro <strong className="text-black/90">formulario personalizado</strong> en línea.
+                  <strong className="text-black/90">James M.</strong> wanted a <strong className="text-black/90">formal quote</strong> for his project and filled out our <strong className="text-black/90">custom online form</strong>.
                 </>
               ),
               to: "/freequote",
@@ -25,7 +25,7 @@ const ContactRedirect = () => {
               name: "Emma G.",
               desc: (
                 <>
-                  <strong className="text-black/90">Emma G.</strong> tenía algunas dudas y <strong className="text-black/90">contactó</strong> con nuestro <strong className="text-black/90">equipo de atención</strong> para aclararlas.
+                  <strong className="text-black/90">Emma G.</strong> had a few questions and <strong className="text-black/90">reached out</strong> to our <strong className="text-black/90">support team</strong> to get answers.
                 </>
               ),
               to: "/formpage",
@@ -36,7 +36,7 @@ const ContactRedirect = () => {
               name: "Iasiah T.",
               desc: (
                 <>
-                  <strong className="text-black/90">Iasiah T.</strong> quería saber cómo <strong className="text-black/90">financiar su proyecto</strong> y siguió estos pasos.
+                  <strong className="text-black/90">Iasiah T.</strong> wanted to know how to <strong className="text-black/90">finance his project</strong> and followed these steps.
                 </>
               ),
               to: "/calculator",
