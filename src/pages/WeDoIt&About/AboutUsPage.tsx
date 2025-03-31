@@ -1,7 +1,7 @@
 import React from "react";
 import MarqueeBanner from "../../components/MarqueeBanner";
-import ImgTxtSection from "../../components/ImgTxtSection";
 import SectionBlock from "../../components/SectionBlock";
+import { Wrench, PencilRuler, ShieldCheck, Handshake, CheckCircle } from "lucide-react";
 
 const sectionsData = [
   {
@@ -14,6 +14,15 @@ const sectionsData = [
 ];
 
 const AboutUsPage: React.FC = () => {
+
+  const benefits = [
+    { icon: <Wrench size={32} className="text-orange-600" />, title: "Expert Craftsmanship", text: "Our team ensures precision and high-quality materials." },
+    { icon: <PencilRuler size={32} className="text-orange-600" />, title: "Custom Designs", text: "We tailor each project to your vision." },
+    { icon: <ShieldCheck size={32} className="text-orange-600" />, title: "Durability & Quality", text: "Weather-resistant aluminum structures for longevity." },
+    { icon: <Handshake size={32} className="text-orange-600" />, title: "Exceptional Customer Service", text: "We prioritize communication and satisfaction." },
+    { icon: <CheckCircle size={32} className="text-orange-600" />, title: "Safety & Compliance", text: "We follow the highest industry standards." },
+  ];
+
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="about-us-heading">
       <header className="sr-only">
@@ -23,9 +32,9 @@ const AboutUsPage: React.FC = () => {
       <SectionBlock sections={sectionsData} />
       <MarqueeBanner />
 
-      <div className="flex flex-col my-10 gap-10 items-center max-w-[1080px] w-full px-5">
+      <div className="flex flex-col my-10 gap-0 items-center max-w-[1080px] w-full px-5">
         {/* Who We Are */}
-        <header className="text-center">
+        <header className="text-center mb-10">
           <h2 className="font-semibold text-4xl mb-3 text-black/90">Who We Are</h2>
           <div className="w-24 h-1 bg-[#0d4754] mt-4 mb-3 mx-auto rounded-full"></div>
           <p className="font-semibold text-black/80">
@@ -49,23 +58,25 @@ const AboutUsPage: React.FC = () => {
         </section>
 
         {/* Why Choose Us */}
-        <header className="text-center">
+        <header className="text-center mt-10">
           <h2 className="font-semibold text-4xl">Why Choose Us?</h2>
           <div className="w-24 h-1 bg-[#0d4754] mt-4 mb-3 rounded-full mx-auto"></div>
         </header>
 
-        {[ 
-          { title: "Expert Craftsmanship", text: "Our team ensures precision and high-quality materials.", imageUrl: "assets/images/Products/Patios&Pergolas/Attached/06.webp", imagePosition: "right" },
-          { title: "Custom Designs", text: "We tailor each project to your vision.", imageUrl: "assets/images/Products/Patios&Pergolas/Attached/11.webp", imagePosition: "left" },
-          { title: "Durability & Quality", text: "Weather-resistant aluminum structures for longevity.", imageUrl: "assets/images/Products/Patios&Pergolas/Attached/20.webp", imagePosition: "right" },
-          { title: "Exceptional Customer Service", text: "We prioritize communication and satisfaction.", imageUrl: "assets/images/Products/Patios&Pergolas/Attached/23.webp", imagePosition: "left" },
-          { title: "Safety & Compliance", text: "We follow the highest industry standards.", imageUrl: "assets/images/Products/Patios&Pergolas/Attached/25.webp", imagePosition: "right" },
-        ].map((section, index) => (
-          <ImgTxtSection key={index} {...section} imagePosition={section.imagePosition as "left" | "right"} />
-        ))}
+        <div className="grid gap-8 mt-3 md:grid-cols-2 md:ml-15">
+          {benefits.map((item, index) => (
+            <div key={index} className="flex items-start gap-4">
+              <div>{item.icon}</div>
+              <div>
+                <h3 className="font-semibold text-lg">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
         {/* Our Commitment */}
-        <header className="text-center">
+        <header className="text-center mt-10">
           <h2 className="font-semibold text-4xl text-black/90">Our Commitment to You</h2>
           <div className="w-24 h-1 bg-[#0d4754] mt-4 mb-3 mx-auto rounded-full"></div>
           <p className="font-semibold text-black/80">

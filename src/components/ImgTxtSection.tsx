@@ -44,7 +44,7 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
           src={imageUrl}
           alt={title}
           loading="lazy"
-          className="rounded-lg shadow-md w-full object-cover aspect-video"
+          className="rounded-lg shadow-md w-150 object-cover aspect-[3/2]"
           onError={(e) => (e.currentTarget.src = "/assets/images/default-image.webp")} // Imagen por defecto en caso de error
         />
       </figure>
