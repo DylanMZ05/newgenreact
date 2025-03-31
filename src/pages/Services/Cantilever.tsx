@@ -19,7 +19,7 @@ const sectionsData = [
 const backgroundImage = "assets/images/Products/Patios&Pergolas/Cantilever/03.webp";
 
 // Lista de imágenes generada automáticamente
-const imagePaths = Array.from({ length: 10 }, (_, i) =>
+const imagePaths = Array.from({ length: 12 }, (_, i) =>
   `assets/images/Products/Patios&Pergolas/Cantilever/${(i + 1).toString().padStart(2, "0")}.webp`
 );
 

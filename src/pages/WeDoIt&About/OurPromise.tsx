@@ -6,8 +6,8 @@ import SectionBlock from "../../components/SectionBlock";
 const sectionsData = [
   {
     id: 1,
-    title: "What is the process from start to finish?",
-    description: "From concept to completion, we follow a streamlined process to ensure a smooth and hassle-free experience.",
+    title: "Our Promise to Deliver Excellence, Every Step of the Way",
+    description: "We are committed to delivering unmatched quality, professionalism, and customer satisfaction in every project we take on.",
     backgroundImage: "assets/images/Products/Patios&Pergolas/Attached/23.webp",
   },
 ];
@@ -27,13 +27,13 @@ const OurPromise: React.FC = () => {
       <MarqueeBanner />
 
       <div className="flex flex-col items-center my-10 gap-10 max-w-screen-lg px-5">
-        <header className="text-center">
+        <header className="text-center flex flex-col items-center">
           <h2 className="font-semibold text-3xl max-w-2xl">
             From the first consultation to project completion, we guarantee a clear, professional, and hassle-free process.
           </h2>
           <div className="w-24 h-1 bg-[#0d4754] mx-auto rounded-full mt-5"></div>
           <p className="mt-4 text-lg leading-relaxed">
-            Your satisfaction is at the heart of what we do. We use **high-quality materials** and **innovative techniques** to ensure durability and aesthetics. 
+            Your satisfaction is at the heart of what we do. We use high-quality materials and innovative techniques to ensure durability and aesthetics. 
             How we do it is transparent, ensuring you feel confident every step of the way.
           </p>
         </header>

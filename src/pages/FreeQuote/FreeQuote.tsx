@@ -1,4 +1,4 @@
-import Step from "../../components/Step";
+import Step from "./Step";
 import { useStepNavigation, StepData } from "../../hooks/useStepNavigation";
 import BlockSection from "../../components/BlockSection";
 

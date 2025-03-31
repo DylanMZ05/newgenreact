@@ -22,8 +22,8 @@ const backgroundImage = "assets/images/Products/OutdoorKitchen/Traditional/07.we
 const generateImagePaths = (path: string, count: number) =>
   Array.from({ length: count }, (_, i) => `${path}/${(i + 1).toString().padStart(2, "0")}.webp`);
 
-const imagesModern = generateImagePaths("assets/images/Products/OutdoorKitchen/Modern", 15);
-const imagesTraditional = generateImagePaths("assets/images/Products/OutdoorKitchen/Traditional", 9);
+const imagesModern = generateImagePaths("assets/images/Products/OutdoorKitchen/Modern", 18);
+const imagesTraditional = generateImagePaths("assets/images/Products/OutdoorKitchen/Traditional", 11);
 
 const OutdoorKitchen: React.FC = () => {
   return (

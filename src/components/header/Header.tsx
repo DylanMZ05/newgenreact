@@ -186,7 +186,7 @@ const Header: React.FC = () => {
                 {mobileDropdownOpen && (
                   <div className="flex flex-col w-full text-center mt-2">
                     <Link 
-                      to="/ourpromise" 
+                      to="/ourpromise_patiobuildershouston" 
                       onClick={() => { 
                         scrollToTop(); 
                         setMenuOpen(false); 
@@ -197,7 +197,7 @@ const Header: React.FC = () => {
                       Our Promise
                     </Link>
                     <Link 
-                      to="/howwedoit" 
+                      to="/howwedoit_patiobuildershouston" 
                       onClick={() => { 
                         scrollToTop(); 
                         setMenuOpen(false); 

@@ -19,7 +19,7 @@ const sectionsData = [
 const backgroundImage = "assets/images/Products/Patios&Pergolas/Attached/12.webp";
 
 // Lista de imágenes optimizada
-const imagePaths = Array.from({ length: 65 }, (_, i) =>
+const imagePaths = Array.from({ length: 46 }, (_, i) =>
   `assets/images/Products/Patios&Pergolas/Attached/${(i + 1).toString().padStart(2, "0")}.webp`
 );
 
