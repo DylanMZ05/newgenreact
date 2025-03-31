@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import BlockSection from "../../components/BlockSection";
 
 const FormPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -38,87 +39,87 @@ const FormPage: React.FC = () => {
   };
 
   return (
-    <section 
-      className="h-screen flex flex-col items-center justify-center 
-      bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] 
-      bg-cover bg-center relative"
+    <section
+      className="h-content min-h-screen flex flex-col items-center justify-center bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] bg-cover bg-center"
       aria-labelledby="contact-form-title"
     >
-      <div className="absolute inset-0 bg-black/60"></div>
+      <BlockSection />
 
-      <div className="relative bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-        <h2 id="contact-form-title" className="text-2xl font-semibold text-center mb-4">
-          Contact Us!
-        </h2>
+      <div className="w-full h-content min-h-[calc(100vh-80px)] bg-black/50 flex items-center justify-center px-4 py-10">
+        <div className="relative bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+          <h2 id="contact-form-title" className="text-2xl font-semibold text-center mb-4">
+            Contact Us!
+          </h2>
 
-        {errorMsg && <p className="text-red-500 text-sm text-center mb-3">{errorMsg}</p>}
+          {errorMsg && <p className="text-red-500 text-sm text-center mb-3">{errorMsg}</p>}
 
-        <div className="flex flex-col gap-4">
-          <input
-            type="text"
-            id="name"
-            placeholder="Full Name"
-            className="border border-gray-300 rounded-md px-4 py-2"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            autoComplete="name"
-            aria-label="Full Name"
-          />
+          <div className="flex flex-col gap-4">
+            <input
+              type="text"
+              id="name"
+              placeholder="Full Name"
+              className="border border-gray-300 rounded-md px-4 py-2"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              autoComplete="name"
+              aria-label="Full Name"
+            />
 
-          <input
-            type="tel"
-            id="phone"
-            placeholder="Phone (Only numbers)"
-            className="border border-gray-300 rounded-md px-4 py-2"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            autoComplete="tel"
-            aria-label="Phone Number"
-          />
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Phone (Only numbers)"
+              className="border border-gray-300 rounded-md px-4 py-2"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              autoComplete="tel"
+              aria-label="Phone Number"
+            />
 
-          <input
-            type="email"
-            id="email"
-            placeholder="Email (example@example.com)"
-            className="border border-gray-300 rounded-md px-4 py-2"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            autoComplete="email"
-            aria-label="Email Address"
-          />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email (example@example.com)"
+              className="border border-gray-300 rounded-md px-4 py-2"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              autoComplete="email"
+              aria-label="Email Address"
+            />
 
-          <input
-            type="text"
-            id="zip"
-            placeholder="Zip Code (Only numbers)"
-            className="border border-gray-300 rounded-md px-4 py-2"
-            value={formData.zip}
-            onChange={handleChange}
-            required
-            autoComplete="postal-code"
-            aria-label="Zip Code"
-          />
+            <input
+              type="text"
+              id="zip"
+              placeholder="Zip Code (Only numbers)"
+              className="border border-gray-300 rounded-md px-4 py-2"
+              value={formData.zip}
+              onChange={handleChange}
+              required
+              autoComplete="postal-code"
+              aria-label="Zip Code"
+            />
 
-          <textarea
-            id="notes"
-            placeholder="Notes (Optional)"
-            className="border border-gray-300 rounded-md px-4 py-2 h-24"
-            value={formData.notes}
-            onChange={handleChange}
-            aria-label="Additional Notes"
-            aria-describedby="notes-description"
-          ></textarea>
+            <textarea
+              id="notes"
+              placeholder="Notes (Optional)"
+              className="border border-gray-300 rounded-md px-4 py-2 h-24"
+              value={formData.notes}
+              onChange={handleChange}
+              aria-label="Additional Notes"
+              aria-describedby="notes-description"
+            ></textarea>
 
-          <button
-            onClick={sendToWhatsApp}
-            className="flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-green-600 focus:ring-2 focus:ring-green-500"
-            aria-label="Send message via WhatsApp"
-          >
-            <FaWhatsapp className="mr-2" /> Send via WhatsApp
-          </button>
+            <button
+              onClick={sendToWhatsApp}
+              className="flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-green-600 focus:ring-2 focus:ring-green-500"
+              aria-label="Send message via WhatsApp"
+            >
+              <FaWhatsapp className="mr-2" /> Send via WhatsApp
+            </button>
+          </div>
         </div>
       </div>
     </section>

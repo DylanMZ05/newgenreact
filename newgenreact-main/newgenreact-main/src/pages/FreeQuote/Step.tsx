@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StepData } from "../hooks/useStepNavigation";
+import { StepData } from "../../hooks/useStepNavigation";
 import { X } from "lucide-react";
 
 interface StepProps {
@@ -61,7 +61,7 @@ const Step: React.FC<StepProps> = ({
   };
 
   return (
-    <div className="w-full max-w-[1080px] mx-5 mb-12 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
+    <div className="w-full max-w-[1080px] mb-12 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
       <header className="text-center">
         <h2 className="text-2xl font-semibold text-gray-800">{stepData.title}</h2>
         <div className="w-20 h-[3px] bg-[#0d4754] mx-auto mb-1 mt-2 rounded-full"></div>

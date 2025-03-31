@@ -163,9 +163,7 @@ const Layout = memo(() => {
         <Route path="/blogs/blog/:id" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogPage />} />
         <Route path="/freequote" element={<FreeQuote />} />
-
         <Route path="/contact" element={<ContactRedirect />} />
-
         <Route path="/formpage" element={<FormPage />} />
       </Routes>
       {!isNoLayout && <WspButton />}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const FinancingOptions: React.FC = () => {
   return (
     <section className="flex flex-col items-center justify-center text-center p-6 min-h-screen">
-      <Link to="//" aria-label="Go to Home">
+      <Link to="/" aria-label="Go to Home">
         <img
           src="assets/images/IdentidadSVG/LogoColor.svg"
           alt="New Gen Patio Logo"

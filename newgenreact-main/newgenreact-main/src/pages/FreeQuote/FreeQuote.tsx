@@ -1,5 +1,6 @@
-import Step from "../../components/Step";
+import Step from "./Step";
 import { useStepNavigation, StepData } from "../../hooks/useStepNavigation";
+import BlockSection from "../../components/BlockSection";
 
 // Definimos los pasos del flujo
 const steps: Record<number, StepData> = {
@@ -99,9 +100,10 @@ const FreeQuote = () => {
   const { stepData, nextStep, previousStep, updateFormData, formData, selections } = useStepNavigation(steps);
 
   return (
-    <section className="h-content min-h-screen flex flex-col items-center justify-center bg-[url(assets/images/Products/Patios&Pergolas/Attached/01.webp)]">
-      <div className="w-full h-content min-h-screen bg-black/70 flex items-center justify-center">
-      <fieldset className="mx-5">
+    <section className="h-content min-h-screen flex flex-col items-center justify-center bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] bg-cover bg-center">
+      <BlockSection />
+      <div className="w-full h-content min-h-[calc(100vh-80px)] bg-black/50 flex items-center justify-center">
+        <fieldset className="mx-5">
           <legend id="free-quote-heading" className="text-2xl font-semibold text-center text-transparent mx-5">
             Get Your Free Quote
           </legend>
