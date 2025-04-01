@@ -1,17 +1,8 @@
 import React from "react";
 import MarqueeBanner from "../../components/MarqueeBanner";
-import SectionBlock from "../../components/SectionBlock";
 import { Wrench, PencilRuler, ShieldCheck, Handshake, CheckCircle } from "lucide-react";
 
-const sectionsData = [
-  {
-    id: 1,
-    title: "About Us",
-    description:
-      "We craft high-quality aluminum patios and pergolas, enhancing your outdoor living with style and function.",
-    backgroundImage: "assets/images/Products/Patios&Pergolas/Attached/23.webp",
-  },
-];
+
 
 const AboutUsPage: React.FC = () => {
 
@@ -29,7 +20,30 @@ const AboutUsPage: React.FC = () => {
         <h1 id="about-us-heading">About Us - New Gen Patio</h1>
       </header>
 
-      <SectionBlock sections={sectionsData} />
+      <section className="w-full">
+        {/* Sección 1 */}
+        <div
+          className="relative flex flex-col items-center justify-center text-center w-full h-[34vh] bg-cover bg-center"
+          aria-labelledby="section-title-1"
+          role="region"
+          style={{
+            backgroundImage: `url(assets/images/Products/Patios&Pergolas/Attached/23.webp)`,
+            backgroundAttachment: "fixed",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/80"></div>
+
+          <div className="relative z-10 flex flex-col items-center text-white px-6 max-w-3xl">
+            <h2 id="section-title-1" className="text-4xl font-semibold">
+              About Us
+            </h2>
+            <div className="w-28 h-[3px] bg-orange-600 mt-3 mb-2 rounded-full"></div>
+            <p className="text-xl mb-5 text-white/80">
+              We craft high-quality aluminum patios and pergolas, enhancing your outdoor living with style and function.
+            </p>
+          </div>
+        </div>
+      </section>
       <MarqueeBanner />
 
       <div className="flex flex-col my-10 gap-0 items-center max-w-[1080px] w-full px-5">
