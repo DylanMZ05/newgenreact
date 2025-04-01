@@ -19,7 +19,7 @@ const sectionsData = [
 const backgroundImage = "assets/images/Products/Patios&Pergolas/Freestanding/06.webp";
 
 // Generar automáticamente las imágenes en vez de listarlas manualmente
-const imagePaths = Array.from({ length: 22 }, (_, i) =>
+const imagePaths = Array.from({ length: 21 }, (_, i) =>
   `assets/images/Products/Patios&Pergolas/Freestanding/${(i + 1).toString().padStart(2, "0")}.webp`
 );
 

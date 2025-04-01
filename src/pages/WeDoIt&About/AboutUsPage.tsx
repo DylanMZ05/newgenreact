@@ -78,15 +78,25 @@ const AboutUsPage: React.FC = () => {
         </header>
 
         <div className="grid gap-8 mt-3 md:grid-cols-2 md:ml-15">
-          {benefits.map((item, index) => (
-            <div key={index} className="flex items-start gap-4">
-              <div>{item.icon}</div>
-              <div>
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.text}</p>
+          {benefits.map((item, index) => {
+            const isLastOdd =
+              benefits.length % 2 === 1 && index === benefits.length - 1;
+
+            return (
+              <div
+                key={index}
+                className={`flex items-start gap-4 ${
+                  isLastOdd ? "md:col-span-2 md:justify-center" : ""
+                }`}
+              >
+                <div>{item.icon}</div>
+                <div>
+                  <h3 className="font-semibold text-lg">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.text}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Our Commitment */}
