@@ -20,7 +20,7 @@ const Step: React.FC<StepProps> = ({
   selections,
 }) => {
   const [showPopup, setShowPopup] = useState(false);
-  const [whatsappUrl, setWhatsappUrl] = useState("");
+  // const [whatsappUrl, setWhatsappUrl] = useState("");
 
   const getFormattedInputs = () =>
     Object.entries(formData)
@@ -56,8 +56,8 @@ const Step: React.FC<StepProps> = ({
     const message = buildMessage();
     copyToClipboard(message);
 
-    const whatsappURL = `https://wa.me/13463800845?text=${encodeURIComponent(message)}`;
-    setWhatsappUrl(whatsappURL);
+    // const whatsappURL = `https://wa.me/13463800845?text=${encodeURIComponent(message)}`;
+    // setWhatsappUrl(whatsappURL);
   };
 
   return (
@@ -165,7 +165,14 @@ const Step: React.FC<StepProps> = ({
 
             <p className="text-lg font-semibold">Message Copied</p>
             <p className="text-red-500/80 font-semibold">If you use WhatsApp Desktop, copy it when you enter the chat</p>
-            <button onClick={() => window.open(whatsappUrl, "_blank")} className="mt-4 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600">
+            <button
+              onClick={() => {
+                const message = buildMessage();
+                sessionStorage.setItem("whatsappMessage", message); // guardar temporalmente
+                window.open("/freequote-tracking", "_blank"); // abrir URL fija
+              }}
+              className="mt-4 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600"
+            >
               Go to WhatsApp
             </button>
           </div>

@@ -46,6 +46,9 @@ import SectionBlock from "./components/SectionBlock";
 import FormPage from "./pages/Contact/FormPage";
 import ContactRedirect from "./pages/Contact/ContactRedirect";
 
+// Traking
+import FreeQuoteTracking from "./pages/traking/freequote-tracking";
+
 const sectionsData3 = [
   {
     id: 6,
@@ -91,7 +94,7 @@ const sections = [
 // **Layout sin Header y Footer**
 const Layout = memo(() => {
   const location = useLocation();
-  const noLayoutRoutes = useMemo(() => ["/financing-options"], []);
+  const noLayoutRoutes = useMemo(() => ["/financing-options","/freequote-tracking"], []);
 
   const isNoLayout = noLayoutRoutes.includes(location.pathname);
 
@@ -165,6 +168,8 @@ const Layout = memo(() => {
         <Route path="/freequote" element={<FreeQuote />} />
         <Route path="/contact" element={<ContactRedirect />} />
         <Route path="/formpage" element={<FormPage />} />
+
+        <Route path="/freequote-tracking" element={<FreeQuoteTracking />} />
       </Routes>
       {!isNoLayout && <WspButton />}
       {!isNoLayout && <Footer />}
