@@ -1,4 +1,5 @@
 import FAQItem from "./FAQItem";
+import FreeQuoteButton from "../../../components/FreeQuoteButton";
 
 const faqData = [
   {
@@ -71,6 +72,8 @@ const FAQ: React.FC = () => {
         </a>
         .
       </p>
+
+      <FreeQuoteButton />
     </section>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import MarqueeBanner from "../../components/MarqueeBanner";
 import { Wrench, PencilRuler, ShieldCheck, Handshake, CheckCircle } from "lucide-react";
-
+import FreeQuoteButton from "../../components/FreeQuoteButton";
 
 
 const AboutUsPage: React.FC = () => {
@@ -199,6 +199,9 @@ const AboutUsPage: React.FC = () => {
             <p>Marketing Director</p>
           </div>
         </div>
+
+      <FreeQuoteButton />
+      
       </div>
     </section>
   );

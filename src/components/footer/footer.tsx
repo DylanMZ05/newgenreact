@@ -12,11 +12,14 @@ const Footer: React.FC = () => {
       {/* Sección superior con estadísticas y mapa */}
       <section className="border-t border-black/20 relative w-full">
         {/* Título y Estadísticas */}
-        <div className="flex flex-col items-center justify-center pt-[70px]">
+        <div className="flex flex-col items-center justify-center pt-[50px]">
           <h2 className="font-semibold text-4xl text-center px-1">
-            +300 Projects Completed
+            +350 Projects Completed
           </h2>
-          <div className="w-30 h-[3px] bg-[#0d4754] my-4 rounded-full"></div>
+          <div className="w-30 h-[3px] bg-[#0d4754] mt-4 mb-2 rounded-full"></div>
+          <p className="text-center text-gray-800 text-base mt-2 px-4">
+            Click the button below to view a map with completed project locations.
+          </p>
         </div>
 
         {/* Botón para Mostrar/Ocultar Mapa */}

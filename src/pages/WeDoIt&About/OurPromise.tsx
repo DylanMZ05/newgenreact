@@ -2,6 +2,7 @@ import React from "react";
 import MarqueeBanner from "../../components/MarqueeBanner";
 import ImgTxtSection from "../../components/ImgTxtSection";
 import SectionBlock from "../../components/SectionBlock";
+import FreeQuoteButton from "../../components/FreeQuoteButton";
 
 const sectionsData = [
   {
@@ -97,6 +98,9 @@ const OurPromise: React.FC = () => {
             imageProps={{ alt: "Happy customers enjoying their outdoor patio", loading: "lazy" }}
           />
         </article>
+
+      <FreeQuoteButton />
+      
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import CardGrid from "./CardGrid";
+import FreeQuoteButton from "../../../components/FreeQuoteButton";
 
 const coveredPatios = [
   { title: "Attached", imageUrl: "assets/images/Products/Patios&Pergolas/Attached/01.webp", link: "/attachedcoverpatio" },
@@ -34,6 +35,8 @@ const Services: React.FC = () => {
 
         <CardGrid cards={extraServices} />
       </div>
+
+      <FreeQuoteButton />
     </section>
   );
 };

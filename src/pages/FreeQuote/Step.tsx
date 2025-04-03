@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StepData } from "../../hooks/useStepNavigation";
 import { X } from "lucide-react";
 
@@ -20,13 +20,19 @@ const Step: React.FC<StepProps> = ({
   selections,
 }) => {
   const [showPopup, setShowPopup] = useState(false);
-  // const [whatsappUrl, setWhatsappUrl] = useState("");
+  const [noMeasurements, setNoMeasurements] = useState(false);
 
-  const getFormattedInputs = () =>
-    Object.entries(formData)
+  const isMeasurementStep = stepData.fields?.some(field =>
+    ["width", "length", "height", "linear-feet"].includes(field.id)
+  );
+
+  const getFormattedInputs = () => {
+    if (noMeasurements) return "I don't know my measurements.";
+    return Object.entries(formData)
       .filter(([key]) => ["width", "length", "height", "linear-feet"].includes(key))
       .map(([key, value]) => `• ${key.replace("-", " ")}: ${value}`)
       .join("\n");
+  };
 
   const allRequiredFieldsFilled = stepData.fields
     ? stepData.fields.every((field) => !field.required || formData[field.id])
@@ -48,17 +54,26 @@ const Step: React.FC<StepProps> = ({
   };
 
   const handleSendWhatsApp = () => {
-    if (!allRequiredFieldsFilled) {
+    if (!allRequiredFieldsFilled && !noMeasurements) {
       alert("Please complete all required fields before submitting.");
       return;
     }
 
     const message = buildMessage();
     copyToClipboard(message);
-
-    // const whatsappURL = `https://wa.me/13463800845?text=${encodeURIComponent(message)}`;
-    // setWhatsappUrl(whatsappURL);
   };
+
+  const handleIDontKnow = () => {
+    setNoMeasurements(true);
+    nextStep(stepData.nextStep!);
+  };
+
+  useEffect(() => {
+    // Resetear cuando vuelva al paso de medición
+    if (isMeasurementStep) {
+      setNoMeasurements(false);
+    }
+  }, [stepData]);
 
   return (
     <div className="w-full max-w-[1080px] mb-12 p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
@@ -95,17 +110,28 @@ const Step: React.FC<StepProps> = ({
                 id={field.id}
                 type="text"
                 className={`w-full px-3 py-2 border ${
-                  field.required && !formData[field.id] ? "border-red-500" : "border-gray-300"
+                  field.required && !formData[field.id] && !noMeasurements ? "border-red-500" : "border-gray-300"
                 } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                required={field.required}
+                required={field.required && !noMeasurements}
                 value={formData[field.id] || ""}
                 onChange={(e) => updateFormData(field.id, e.target.value)}
+                disabled={noMeasurements}
               />
-              {field.required && !formData[field.id] && (
+              {field.required && !formData[field.id] && !noMeasurements && (
                 <p className="text-red-500 text-sm mt-1">This field is required.</p>
               )}
             </div>
           ))}
+
+          {isMeasurementStep && !noMeasurements && (
+            <button
+              onClick={handleIDontKnow}
+              className="w-full text-sm text-blue-600 hover:text-blue-800 underline mt-2 cursor-pointer"
+              type="button"
+            >
+              I don't know my measurements
+            </button>
+          )}
         </fieldset>
       )}
 
@@ -128,19 +154,21 @@ const Step: React.FC<StepProps> = ({
 
           <button
             onClick={handleSendWhatsApp}
-            disabled={!allRequiredFieldsFilled}
+            disabled={!allRequiredFieldsFilled && !noMeasurements}
             className={`w-full py-2 rounded-full transition ${
-              allRequiredFieldsFilled ? "bg-green-500 text-white hover:bg-green-600" : "bg-gray-400 text-gray-700 cursor-not-allowed"
+              allRequiredFieldsFilled || noMeasurements
+                ? "bg-green-500 text-white hover:bg-green-600"
+                : "bg-gray-400 text-gray-700 cursor-not-allowed"
             } mt-4`}
           >
-            {allRequiredFieldsFilled ? "Send to WhatsApp 📩" : "Complete all fields"}
+            {allRequiredFieldsFilled || noMeasurements ? "Send to WhatsApp 📩" : "Complete all fields"}
           </button>
         </div>
       ) : (
         stepData.fields && (
           <button
             onClick={() => nextStep(stepData.nextStep!)}
-            disabled={!allRequiredFieldsFilled}
+            disabled={!allRequiredFieldsFilled && !noMeasurements}
             className="w-full max-w-75 bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600 transition mt-3 cursor-pointer"
           >
             Continue
@@ -168,8 +196,8 @@ const Step: React.FC<StepProps> = ({
             <button
               onClick={() => {
                 const message = buildMessage();
-                sessionStorage.setItem("whatsappMessage", message); // guardar temporalmente
-                window.open("/freequote-tracking", "_blank"); // abrir URL fija
+                sessionStorage.setItem("whatsappMessage", message);
+                window.open("/freequote-tracking", "_blank");
               }}
               className="mt-4 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600"
             >

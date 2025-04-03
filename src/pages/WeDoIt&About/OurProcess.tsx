@@ -2,6 +2,7 @@ import React from "react";
 import MarqueeBanner from "../../components/MarqueeBanner";
 import ImgTxtSection from "../../components/ImgTxtSection";
 import SectionBlock from "../../components/SectionBlock";
+import FreeQuoteButton from "../../components/FreeQuoteButton";
 
 const sectionsData = [
   {
@@ -86,11 +87,13 @@ const OurProcess: React.FC = () => {
           stepLabel="Step 8:"
           title="Final walk-through and review."
           text="We conduct a detailed inspection with you to ensure everything is flawless. We make sure you are 100% satisfied before final delivery."
-          imageUrl="assets/images/Products/Patios&Pergolas/Freestanding/24.webp"
+          imageUrl="assets/images/Products/Patios&Pergolas/Freestanding/21.webp"
           imagePosition="left"
           imageProps={{ alt: "Final review of an aluminum pergola installation", loading: "lazy" }}
         />
+        <FreeQuoteButton />  
       </div>
+      <MarqueeBanner />
     </section>
   );
 };
