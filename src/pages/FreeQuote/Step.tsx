@@ -26,16 +26,23 @@ const Step: React.FC<StepProps> = ({
     ["width", "length", "height", "linear-feet"].includes(field.id)
   );
 
+  const isMeasurementStepField = (fieldId: string) =>
+    ["width", "length", "height", "linear-feet"].includes(fieldId);
+
   const getFormattedInputs = () => {
     if (noMeasurements) return "I don't know my measurements.";
     return Object.entries(formData)
-      .filter(([key]) => ["width", "length", "height", "linear-feet"].includes(key))
+      .filter(([key]) => isMeasurementStepField(key))
       .map(([key, value]) => `• ${key.replace("-", " ")}: ${value}`)
       .join("\n");
   };
 
   const allRequiredFieldsFilled = stepData.fields
-    ? stepData.fields.every((field) => !field.required || formData[field.id])
+    ? stepData.fields.every((field) =>
+        !field.required ||
+        formData[field.id] ||
+        (noMeasurements && isMeasurementStepField(field.id))
+      )
     : true;
 
   const buildMessage = () => `
@@ -54,7 +61,7 @@ const Step: React.FC<StepProps> = ({
   };
 
   const handleSendWhatsApp = () => {
-    if (!allRequiredFieldsFilled && !noMeasurements) {
+    if (!allRequiredFieldsFilled) {
       alert("Please complete all required fields before submitting.");
       return;
     }
@@ -69,7 +76,6 @@ const Step: React.FC<StepProps> = ({
   };
 
   useEffect(() => {
-    // Resetear cuando vuelva al paso de medición
     if (isMeasurementStep) {
       setNoMeasurements(false);
     }
@@ -82,7 +88,6 @@ const Step: React.FC<StepProps> = ({
         <div className="w-20 h-[3px] bg-[#0d4754] mx-auto mb-1 mt-2 rounded-full"></div>
       </header>
 
-      {/* Opciones con imágenes */}
       {stepData.options && (
         <div className="flex flex-wrap justify-center mt-4 gap-4">
           {stepData.options.map((option, index) => (
@@ -91,14 +96,17 @@ const Step: React.FC<StepProps> = ({
               className="p-2 rounded-lg transition cursor-pointer"
               onClick={() => nextStep(option.nextStep, option.text)}
             >
-              <img src={option.img} alt={option.text} className="w-75 h-50 object-cover rounded-md transition-all hover:scale-105" />
+              <img
+                src={option.img}
+                alt={option.text}
+                className="w-75 h-50 object-cover rounded-md transition-all hover:scale-105"
+              />
               <p className="mt-2 text-center text-2xl font-semibold text-black/90">{option.text}</p>
             </button>
           ))}
         </div>
       )}
 
-      {/* Campos del formulario */}
       {stepData.fields && (
         <fieldset className="mt-4 w-full max-w-md">
           {stepData.fields.map((field) => (
@@ -110,16 +118,22 @@ const Step: React.FC<StepProps> = ({
                 id={field.id}
                 type="text"
                 className={`w-full px-3 py-2 border ${
-                  field.required && !formData[field.id] && !noMeasurements ? "border-red-500" : "border-gray-300"
+                  field.required &&
+                  !formData[field.id] &&
+                  (!noMeasurements || !isMeasurementStepField(field.id))
+                    ? "border-red-500"
+                    : "border-gray-300"
                 } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                required={field.required && !noMeasurements}
+                required={field.required && (!noMeasurements || !isMeasurementStepField(field.id))}
                 value={formData[field.id] || ""}
                 onChange={(e) => updateFormData(field.id, e.target.value)}
-                disabled={noMeasurements}
+                disabled={noMeasurements && isMeasurementStepField(field.id)}
               />
-              {field.required && !formData[field.id] && !noMeasurements && (
-                <p className="text-red-500 text-sm mt-1">This field is required.</p>
-              )}
+              {field.required &&
+                !formData[field.id] &&
+                (!noMeasurements || !isMeasurementStepField(field.id)) && (
+                  <p className="text-red-500 text-sm mt-1">This field is required.</p>
+                )}
             </div>
           ))}
 
@@ -135,7 +149,6 @@ const Step: React.FC<StepProps> = ({
         </fieldset>
       )}
 
-      {/* Último paso con resumen y botón WhatsApp */}
       {stepData.title === "Contact and Resume" ? (
         <div className="w-full max-w-md">
           {selections.length > 0 && (
@@ -154,21 +167,21 @@ const Step: React.FC<StepProps> = ({
 
           <button
             onClick={handleSendWhatsApp}
-            disabled={!allRequiredFieldsFilled && !noMeasurements}
+            disabled={!allRequiredFieldsFilled}
             className={`w-full py-2 rounded-full transition ${
-              allRequiredFieldsFilled || noMeasurements
+              allRequiredFieldsFilled
                 ? "bg-green-500 text-white hover:bg-green-600"
                 : "bg-gray-400 text-gray-700 cursor-not-allowed"
             } mt-4`}
           >
-            {allRequiredFieldsFilled || noMeasurements ? "Send to WhatsApp 📩" : "Complete all fields"}
+            {allRequiredFieldsFilled ? "Send to WhatsApp 📩" : "Complete all fields"}
           </button>
         </div>
       ) : (
         stepData.fields && (
           <button
             onClick={() => nextStep(stepData.nextStep!)}
-            disabled={!allRequiredFieldsFilled && !noMeasurements}
+            disabled={!allRequiredFieldsFilled}
             className="w-full max-w-75 bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600 transition mt-3 cursor-pointer"
           >
             Continue
@@ -176,23 +189,26 @@ const Step: React.FC<StepProps> = ({
         )
       )}
 
-      {/* Botón para regresar */}
       {stepData.previousStep && (
         <button onClick={previousStep} className="mt-4 text-black/70 hover:text-black/90 cursor-pointer transition">
           Back
         </button>
       )}
 
-      {/* Popup de confirmación */}
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/70 bg-opacity-50 z-50">
           <div className="bg-white p-6 mx-5 rounded-lg shadow-lg text-center relative">
-            <button onClick={() => setShowPopup(false)} className="absolute top-3 right-3 text-gray-600 hover:text-gray-800">
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
+            >
               <X size={20} />
             </button>
 
             <p className="text-lg font-semibold">Message Copied</p>
-            <p className="text-red-500/80 font-semibold">If you use WhatsApp Desktop, copy it when you enter the chat</p>
+            <p className="text-red-500/80 font-semibold">
+              If you use WhatsApp Desktop, copy it when you enter the chat
+            </p>
             <button
               onClick={() => {
                 const message = buildMessage();
