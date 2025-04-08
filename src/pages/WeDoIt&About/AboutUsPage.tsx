@@ -31,9 +31,9 @@ const AboutUsPage: React.FC = () => {
           <div className="absolute inset-0 bg-black/80"></div>
 
           <div className="relative z-10 flex flex-col items-center text-white px-6 max-w-3xl">
-            <h2 id="section-title-1" className="text-4xl font-semibold">
+            <h1 id="section-title-1" className="text-4xl font-semibold">
               About Us
-            </h2>
+            </h1>
             <div className="w-28 h-[3px] bg-orange-600 mt-3 mb-2 rounded-full"></div>
             <p className="text-xl mb-5 text-white/80">
               We craft high-quality aluminum patios and pergolas, enhancing your outdoor living with style and function.
