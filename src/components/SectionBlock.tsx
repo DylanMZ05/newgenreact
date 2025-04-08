@@ -41,9 +41,9 @@ const SectionBlock: React.FC<Props> = ({ sections }) => {
 
           {/* Contenido */}
           <div className="relative z-10 flex flex-col items-center text-white px-6 max-w-3xl">
-            <h2 id={`section-title-${section.id}`} className="text-4xl font-semibold">
+            <h1 id={`section-title-${section.id}`} className="text-4xl font-semibold">
               {section.title}
-            </h2>
+            </h1>
             <div className="w-28 h-[3px] bg-orange-600 mt-3 mb-2 rounded-full"></div>
             <p className="text-xl mb-5 text-white/80">{section.description}</p>
           </div>

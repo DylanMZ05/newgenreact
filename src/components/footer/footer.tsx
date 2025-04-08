@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
                   Within your reach!
                 </p>
                 <Link
-                  to="/contact"
+                  to="/contact-us"
                   className="w-40 bg-orange-500 text-white px-4 py-2 mt-4 rounded-full font-semibold hover:bg-orange-600 transition-all mx-auto"
                   onClick={scrollToTop}
                   aria-label="Go to contact form"
@@ -94,7 +94,7 @@ const Footer: React.FC = () => {
                 18 MONTHS at 0% INTEREST!
               </p>
               <Link
-                to="/calculator"
+                to="/patio-financing-houston"
                 className="bg-orange-500 text-white px-4 py-2 mt-4 rounded-full font-semibold hover:bg-orange-600 transition-all"
                 onClick={scrollToTop}
                 aria-label="Check financing options"
@@ -210,11 +210,11 @@ const Footer: React.FC = () => {
           <div className="flex flex-wrap justify-center text-white text-sm mt-4 gap-2">
             {["services", "our-promise", "who-we-are", "blogs", "contact"].map((id, index, array) => {
               const routeMap: { [key: string]: string } = {
-                "services": "/services_patiobuildershouston",
+                "services": "/custom-aluminium-pergola-and-over-patio-houston",
                 "our-promise": "/howwedoit_patiobuildershouston",
-                "who-we-are": "/about_us_patiobuildershouston",
-                "blogs": "/blogs_patiobuildershouston",
-                "contact": "/contact",
+                "who-we-are": "/about-us",
+                "blogs": "/blog",
+                "contact": "/contact-us",
               };
 
               // Usa la ruta mapeada o la predeterminada si no existe en el routeMap

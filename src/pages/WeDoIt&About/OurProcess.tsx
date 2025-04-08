@@ -7,7 +7,7 @@ import FreeQuoteButton from "../../components/FreeQuoteButton";
 const sectionsData = [
   {
     id: 1,
-    title: "What is the process from start to finish?",
+    title: "How We Build – Expert Patio Construction in Houston",
     description: "From concept to completion, we follow a streamlined process to ensure a smooth and hassle-free experience.",
     backgroundImage: "assets/images/Products/Patios&Pergolas/Attached/12.webp",
   },

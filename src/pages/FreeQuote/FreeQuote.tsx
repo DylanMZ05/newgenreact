@@ -100,12 +100,27 @@ const FreeQuote = () => {
   const { stepData, nextStep, previousStep, updateFormData, formData, selections } = useStepNavigation(steps);
 
   return (
-    <section className="h-content min-h-screen flex flex-col items-center justify-center bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] bg-cover bg-center">
+    <section
+      role="region"
+      aria-label="Free quote form"
+      className="min-h-screen bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] bg-cover bg-center"
+    >
       <BlockSection />
-      <div className="w-full h-content min-h-[calc(100vh-80px)] bg-black/50 flex items-center justify-center">
-        <fieldset className="mx-5">
-          <legend id="free-quote-heading" className="text-2xl font-semibold text-center text-transparent mx-5">
-            Get Your Free Quote
+
+      <main className="bg-black/60 min-h-[calc(100vh-80px)] flex flex-col items-center justify-center px-4 py-10">
+        {/* Título principal optimizado */}
+        <h1 className="text-white/90 text-3xl md:text-4xl font-bold text-center mb-2 max-w-3xl leading-tight">
+          Get a Free Quote for Your Patio Project in Houston
+        </h1>
+        <div className="bg-orange-500 h-1 w-50 rounded-full mx-auto mb-6" aria-hidden="true" />
+
+        {/* Paso interactivo */}
+        <fieldset
+          aria-labelledby="free-quote-heading"
+          className="w-full max-w-4xl mx-auto px-4"
+        >
+          <legend id="free-quote-heading" className="sr-only">
+            Free Quote Step Form
           </legend>
 
           <Step
@@ -117,7 +132,7 @@ const FreeQuote = () => {
             selections={selections}
           />
         </fieldset>
-      </div>
+      </main>
     </section>
   );
 };

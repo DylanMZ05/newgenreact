@@ -9,7 +9,7 @@ import Services from "../Home/services/services";
 const sectionsData = [
   {
     id: 1,
-    title: "Attached Cover Patio",
+    title: "Attached Covered Patios in Houston – Custom Design & Installation",
     description:
       "An attached pergola that seamlessly connects to your home’s structure, providing shade and protection while maintaining a smooth transition between indoor and outdoor spaces.",
     backgroundImage: "assets/images/Products/Patios&Pergolas/Attached/01.webp",
@@ -29,7 +29,7 @@ const Attached: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="attached-heading">
       <header className="sr-only">
-        <h1 id="attached-heading">Attached Cover Patio</h1>
+        <h1 id="attached-heading">Attached Covered Patios in Houston – Custom Design & Installation</h1>
       </header>
 
       <SectionBlock sections={sectionsData} />

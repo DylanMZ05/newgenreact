@@ -9,7 +9,7 @@ import Services from "../Home/services/services";
 const sectionsData = [
   {
     id: 1,
-    title: "Artificial Turf, Concrete & Landscaping",
+    title: "Concrete and Turf Installation in Houston – Low Maintenance Landscaping",
     description:
       "A perfect combination of decorative concrete and artificial turf, offering a stylish, durable, and low-maintenance solution for outdoor spaces.",
     backgroundImage: "assets/images/Products/AdditionalServices/Landscaping/05.webp",
@@ -29,7 +29,7 @@ const ConcreteTurf: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="concrete-turf-heading">
       <header className="sr-only">
-        <h1 id="concrete-turf-heading">Artificial Turf, Concrete & Landscaping</h1>
+        <h1 id="concrete-turf-heading">Concrete and Turf Installation in Houston – Low Maintenance Landscaping</h1>
       </header>
 
       <SectionBlock sections={sectionsData} />

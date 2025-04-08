@@ -52,7 +52,7 @@ import FreeQuoteTracking from "./pages/traking/freequote-tracking";
 const sectionsData3 = [
   {
     id: 6,
-    title: "What We Offer",
+    title: "Custom Aluminum Pergolas and Over Patio Builders in Houston",
     description: "Discover our modern, innovative solutions designed to enhance outdoor living with style, functionality, and durability.",
     backgroundImage: "assets/images/Products/Patios&Pergolas/Attached/04.webp",
   },
@@ -94,7 +94,7 @@ const sections = [
 // **Layout sin Header y Footer**
 const Layout = memo(() => {
   const location = useLocation();
-  const noLayoutRoutes = useMemo(() => ["/financing-options","/freequote-tracking"], []);
+  const noLayoutRoutes = useMemo(() => ["/financing-options","/get-a-free-quote-houston-tracking"], []);
 
   const isNoLayout = noLayoutRoutes.includes(location.pathname);
 
@@ -119,7 +119,7 @@ const Layout = memo(() => {
             </main>
           }
         />
-        <Route path="/services_patiobuildershouston" element={
+        <Route path="/custom-aluminium-pergola-and-over-patio-houston" element={
           <>
             <main className="flex flex-col justify-center items-center mb-10">
               <BlockSection />
@@ -132,7 +132,7 @@ const Layout = memo(() => {
             </main>
           </>
           } />
-        <Route path="/ourpromise_patiobuildershouston" element={
+        <Route path="/our-promise-patio-builders-houston" element={
           <>
             <BlockSection />
             <OurPromise />
@@ -144,32 +144,32 @@ const Layout = memo(() => {
             <OurProcess />
           </>
           } />
-        <Route path="/about_us_patiobuildershouston" element={
+        <Route path="/about-us" element={
           <>
             <BlockSection />
             <AboutUsPage />
           </>
         } />
-        <Route path="/blogs_patiobuildershouston" element={
+        <Route path="/blog" element={
           <>
             <BlockSection />
             <BlogSectionPage />
           </>
           } />
-        <Route path="/attachedcoverpatio" element={<Attached />} />
-        <Route path="/freestandingcoverpatio" element={<Freestanding />} />
-        <Route path="/cantilevercoverpatio" element={<Cantilever />} />
-        <Route path="/outdoorkitchen" element={<OutdoorKitchen />} />
-        <Route path="/concrete-turf" element={<ConcreteTurf />} />
-        <Route path="/calculator" element={<Calculator />} />
+        <Route path="/attached-covered-patio-houston" element={<Attached />} />
+        <Route path="/freestanding-covered-patio-houston" element={<Freestanding />} />
+        <Route path="/cantilever-cover-patio-houston" element={<Cantilever />} />
+        <Route path="/outdoor-kitchens-houston" element={<OutdoorKitchen />} />
+        <Route path="/concrete-and-turf-installation-houston" element={<ConcreteTurf />} />
+        <Route path="/patio-financing-houston" element={<Calculator />} />
         <Route path="/financing-options" element={<FinancingOptions />} />
         <Route path="/blogs/blog/:id" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogPage />} />
-        <Route path="/freequote" element={<FreeQuote />} />
-        <Route path="/contact" element={<ContactRedirect />} />
+        <Route path="/get-a-free-quote-houston" element={<FreeQuote />} />
+        <Route path="/contact-us" element={<ContactRedirect />} />
         <Route path="/formpage" element={<FormPage />} />
 
-        <Route path="/freequote-tracking" element={<FreeQuoteTracking />} />
+        <Route path="/get-a-free-quote-houston-tracking" element={<FreeQuoteTracking />} />
       </Routes>
       {!isNoLayout && <WspButton />}
       {!isNoLayout && <Footer />}

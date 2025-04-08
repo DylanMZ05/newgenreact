@@ -213,7 +213,7 @@ const Step: React.FC<StepProps> = ({
               onClick={() => {
                 const message = buildMessage();
                 sessionStorage.setItem("whatsappMessage", message);
-                window.open("/freequote-tracking", "_blank");
+                window.open("/get-a-free-quote-houston-tracking", "_blank");
               }}
               className="mt-4 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600"
             >

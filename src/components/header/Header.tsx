@@ -15,11 +15,11 @@ const Header: React.FC = () => {
   let dropdownTimeout: ReturnType<typeof setTimeout>;
 
   const routeMap: { [key: string]: string } = {
-    "services": "/services_patiobuildershouston",
+    "services": "/custom-aluminium-pergola-and-over-patio-houston",
     "our-promise": "/howwedoit_patiobuildershouston",
-    "who-we-are": "/about_us_patiobuildershouston",
-    "blogs": "/blogs_patiobuildershouston",
-    "contact": "/contact",
+    "who-we-are": "/about-us",
+    "blogs": "/blog",
+    "contact": "/contact-us",
   };
 
   useEffect(() => {
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
                       onMouseLeave={() => setDropdownOpen(false)}
                     >
                       <Link
-                        to="/ourpromise_patiobuildershouston"
+                        to="/our-promise-patio-builders-houston"
                         onClick={scrollToTop}
                         className="block pl-2 py-2 text-black/90 font-semibold hover:bg-gray-200 transition hover:text-orange-500"
                       >
@@ -186,7 +186,7 @@ const Header: React.FC = () => {
                 {mobileDropdownOpen && (
                   <div className="flex flex-col w-full text-center mt-2">
                     <Link 
-                      to="/ourpromise_patiobuildershouston" 
+                      to="/our-promise-patio-builders-houston" 
                       onClick={() => { 
                         scrollToTop(); 
                         setMenuOpen(false); 

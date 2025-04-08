@@ -9,7 +9,7 @@ import Services from "../Home/services/services";
 const sectionsData = [
   {
     id: 1,
-    title: "Pergola Cantilever Design",
+    title: "Cantilever Patio Covers in Houston – Modern Shade Solutions",
     description:
       "A modern, innovative pergola with a cantilevered structure, providing shade without traditional corner posts, resulting in a clean and sophisticated look.",
     backgroundImage: "assets/images/Products/Patios&Pergolas/Cantilever/01.webp",
@@ -29,7 +29,7 @@ const Cantilever: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="cantilever-heading">
       <header className="sr-only">
-        <h1 id="cantilever-heading">Pergola Cantilever Design</h1>
+        <h1 id="cantilever-heading">Cantilever Patio Covers in Houston – Modern Shade Solutions</h1>
       </header>
 
       <SectionBlock sections={sectionsData} />

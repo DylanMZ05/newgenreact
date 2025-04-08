@@ -9,7 +9,7 @@ import Services from "../Home/services/services";
 const sectionsData = [
   {
     id: 1,
-    title: "Freestanding Covered Patio",
+    title: "Freestanding Covered Patios in Houston – Elegant Outdoor Structures",
     description:
       "A standalone pergola that can be placed anywhere in your backyard, offering a versatile and customizable space for relaxation, entertainment, or shade.",
     backgroundImage: "assets/images/Products/Patios&Pergolas/Freestanding/01.webp",

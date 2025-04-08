@@ -2,14 +2,14 @@ import CardGrid from "./CardGrid";
 import FreeQuoteButton from "../../../components/FreeQuoteButton";
 
 const coveredPatios = [
-  { title: "Attached", imageUrl: "assets/images/Products/Patios&Pergolas/Attached/01.webp", link: "/attachedcoverpatio" },
-  { title: "Freestanding", imageUrl: "assets/images/Products/Patios&Pergolas/Freestanding/01.webp", link: "/freestandingcoverpatio" },
-  { title: "Cantilever", imageUrl: "assets/images/Products/Patios&Pergolas/Cantilever/01.webp", link: "/cantilevercoverpatio" },
+  { title: "Attached", imageUrl: "assets/images/Products/Patios&Pergolas/Attached/01.webp", link: "/attached-covered-patio-houston" },
+  { title: "Freestanding", imageUrl: "assets/images/Products/Patios&Pergolas/Freestanding/01.webp", link: "/freestanding-covered-patio-houston" },
+  { title: "Cantilever", imageUrl: "assets/images/Products/Patios&Pergolas/Cantilever/01.webp", link: "/cantilever-cover-patio-houston" },
 ];
 
 const extraServices = [
-  { title: "Outdoor Kitchen", imageUrl: "assets/images/Products/OutdoorKitchen/Modern/01.webp", link: "/outdoorkitchen" },
-  { title: "Concrete & Turf", imageUrl: "assets/images/Products/AdditionalServices/1.webp", link: "/concrete-turf" },
+  { title: "Outdoor Kitchen", imageUrl: "assets/images/Products/OutdoorKitchen/Modern/01.webp", link: "/outdoor-kitchens-houston" },
+  { title: "Concrete & Turf", imageUrl: "assets/images/Products/AdditionalServices/1.webp", link: "/concrete-and-turf-installation-houston" },
 ];
 
 const Services: React.FC = () => {

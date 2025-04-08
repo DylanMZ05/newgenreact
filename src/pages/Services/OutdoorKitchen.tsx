@@ -9,7 +9,7 @@ import Services from "../Home/services/services";
 const sectionsData = [
   {
     id: 1,
-    title: "Outdoor Kitchen",
+    title: "Custom Outdoor Kitchens in Houston – Built for Entertaining",
     description:
       "A fully equipped outdoor kitchen designed to bring convenience and style to your backyard, allowing you to cook, entertain, and dine in an open-air setting.",
     backgroundImage: "assets/images/Products/OutdoorKitchen/Modern/10.webp",
@@ -29,7 +29,7 @@ const OutdoorKitchen: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="outdoor-kitchen-heading">
       <header className="sr-only">
-        <h1 id="outdoor-kitchen-heading">Outdoor Kitchen</h1>
+        <h1 id="outdoor-kitchen-heading">Custom Outdoor Kitchens in Houston – Built for Entertaining</h1>
       </header>
 
       <SectionBlock sections={sectionsData} />

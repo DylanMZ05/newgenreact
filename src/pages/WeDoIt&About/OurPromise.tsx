@@ -7,7 +7,7 @@ import FreeQuoteButton from "../../components/FreeQuoteButton";
 const sectionsData = [
   {
     id: 1,
-    title: "Our Promise to Deliver Excellence, Every Step of the Way",
+    title: "About Us – Meet the Experts Behind New Gen Patio",
     description: "We are committed to delivering unmatched quality, professionalism, and customer satisfaction in every project we take on.",
     backgroundImage: "assets/images/Products/Patios&Pergolas/Attached/23.webp",
   },
