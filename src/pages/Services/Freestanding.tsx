@@ -28,9 +28,6 @@ const validImages = imagePaths.filter((img) => img.trim() !== "");
 const Freestanding: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="freestanding-heading">
-      <header className="sr-only">
-        <h1 id="freestanding-heading">Freestanding Covered Patio</h1>
-      </header>
 
       <SectionBlock sections={sectionsData} />
       <Slider images={validImages} withBorderT />

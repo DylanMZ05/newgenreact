@@ -16,7 +16,7 @@ const Services: React.FC = () => {
   return (
     <section id="services" aria-labelledby="services-heading" className="flex flex-col items-center justify-center py-12 px-6">
       <header className="text-center max-w-2xl">
-        <h3 className="text-2xl font-semibold text-[#0d4754]">OUR SERVICES</h3>
+        <p className="text-2xl font-semibold text-[#0d4754]">OUR SERVICES</p>
         <h2 id="services-heading" className="text-4xl font-semibold">Covered Patios</h2>
         <div className="w-24 h-1 bg-[#0d4754] my-3 rounded-full mx-auto"></div>
         <p className="text-center font-semibold text-black/80 mb-6 max-w-2xl">

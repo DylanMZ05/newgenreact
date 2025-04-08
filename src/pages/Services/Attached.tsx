@@ -28,9 +28,6 @@ const validImages = imagePaths.filter((img) => img.trim() !== "");
 const Attached: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="attached-heading">
-      <header className="sr-only">
-        <h1 id="attached-heading">Attached Covered Patios in Houston – Custom Design & Installation</h1>
-      </header>
 
       <SectionBlock sections={sectionsData} />
       <Slider images={validImages} withBorderT />

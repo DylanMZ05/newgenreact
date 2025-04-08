@@ -73,12 +73,12 @@ const FAQ: React.FC = () => {
       className="flex flex-col items-center justify-center py-12 px-6 border-t border-black/20 overflow-hidden"
     >
       <header className="text-center">
-        <h2
+        <p
           id="faq-heading"
           className="font-semibold text-2xl text-[#0d4754]"
         >
           FAQs
-        </h2>
+        </p>
         <h3 className="font-semibold text-4xl text-center">
           Frequently Asked Questions
         </h3>

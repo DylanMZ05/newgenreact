@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, link }) => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-3 text-white text-2xl font-semibold"
         >
-          {title}
+          <h3 className="text-white text-2xl font-semibold">{title}</h3>
         </motion.figcaption>
       </figure>
     </article>

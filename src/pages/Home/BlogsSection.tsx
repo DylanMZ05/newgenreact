@@ -22,12 +22,12 @@ const BlogSection: React.FC = () => {
     >
       <div className="max-w-6xl mx-auto">
         <header className="text-center">
-          <h2 id="blogs-heading" className="text-2xl font-semibold text-[#0d4754]">
-            Our Blog
-          </h2>
-          <h3 className="text-4xl font-semibold text-black">
+          <p id="blogs-heading" className="text-2xl font-semibold text-[#0d4754]">
+            Our Blogs
+          </p>
+          <p className="text-4xl font-semibold text-black">
             Latest Insights & Outdoor Living Ideas
-          </h3>
+          </p>
           <div className="w-24 h-1 bg-[#0d4754] mt-4 mb-6 mx-auto rounded-full"></div>
         </header>
 

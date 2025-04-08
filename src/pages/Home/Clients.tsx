@@ -26,9 +26,9 @@ const Clients: React.FC = () => {
       aria-labelledby="clients-heading"
       className="flex flex-col items-center justify-center py-12 px-6 border-t border-black/20 overflow-hidden bg-gray-100"
     >
-      <h2 id="clients-heading" className="font-semibold text-4xl text-center">
+      <p id="clients-heading" className="font-semibold text-4xl text-center">
         Our Clients
-      </h2>
+      </p>
       <div className="w-24 h-1 bg-[#0d4754] mt-4 mb-5 rounded-full"></div>
 
       <div className="marquee-reviews-container max-w-[1080px]" ref={marqueeRef}>

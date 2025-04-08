@@ -28,9 +28,6 @@ const validImages = imagePaths.filter((img) => img.trim() !== "");
 const Cantilever: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="cantilever-heading">
-      <header className="sr-only">
-        <h1 id="cantilever-heading">Cantilever Patio Covers in Houston – Modern Shade Solutions</h1>
-      </header>
 
       <SectionBlock sections={sectionsData} />
       <Slider images={validImages} withBorderT />

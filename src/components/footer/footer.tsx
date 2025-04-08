@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
       <section className="border-t border-black/20 relative w-full">
         {/* Título y Estadísticas */}
         <div className="flex flex-col items-center justify-center pt-[50px]">
-          <h2 className="font-semibold text-4xl text-center px-1">
+          <p className="font-semibold text-4xl text-center px-1">
             +350 Projects Completed
-          </h2>
+          </p>
           <div className="w-30 h-[3px] bg-[#0d4754] mt-4 mb-2 rounded-full"></div>
           <p className="text-center text-gray-800 text-base mt-2 px-4">
             Click the button below to view a map with completed project locations.
@@ -57,17 +57,17 @@ const Footer: React.FC = () => {
         <section className="w-full max-w-[1400px] flex flex-col items-center justify-center py-10 md:px-10">
           
           {/* Contact Section */}
-          <h2 className="text-white text-5xl font-semibold mb-4 text-center">
+          <p className="text-white text-5xl font-semibold mb-4 text-center">
             Get in Touch
-          </h2>
+          </p>
 
           <div className="md:w-full md:flex md:justify-between px-5 max-w-[1100px]">
             {/* Contact Form */}
             <div className="flex flex-col items-center justify-center text-center text-white p-6 w-full max-w-md mt-6 md:mt-10 md:h-100">
               <div className="flex flex-col gap-5">
-                <h3 className="text-2xl font-bold md:text-3xl">
+                <p className="text-2xl font-bold md:text-3xl">
                   CONTACT US NOW!
-                </h3>
+                </p>
                 <p className="mt-2 text-xl text-white/80 md:text-2xl">
                   Within your reach!
                 </p>
@@ -84,9 +84,9 @@ const Footer: React.FC = () => {
 
             {/* Financing Card */}
             <div className="flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-red-800 to-purple-800 text-center text-white p-6 rounded-lg shadow-lg w-full max-w-md mt-6 md:mt-10 md:h-100">
-              <h3 className="text-2xl font-bold md:text-3xl">
+              <p className="text-2xl font-bold md:text-3xl">
                 FLEXIBLE FINANCING!
-              </h3>
+              </p>
               <p className="mt-2 text-xl text-white/80 md:text-2xl">
                 Options available for up to
               </p>
@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
           <div className="text-white flex flex-col w-full max-w-[1920px] gap-8 md:flex-row md:justify-between px-5 mt-3">
             {/* Company Info */}
             <div className="flex flex-col">
-              <h3 className="font-semibold text-2xl mb-3">NEW GEN PATIO</h3>
+              <p className="font-semibold text-2xl mb-3">NEW GEN PATIO</p>
               <p className="text-white/80">
                 Transforming your outdoor spaces with expertly crafted patios and pergolas.
                 <br /> Design, quality, and communication at the heart of every project.
@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
 
             {/* Contact Info */}
             <div>
-              <h3 className="font-semibold text-2xl mb-3">CONTACT</h3>
+              <p className="font-semibold text-2xl mb-3">CONTACT</p>
               <a href="https://wa.me/13463800845" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 text-white/80 hover:text-orange-400 transition-all">
                 <FaPhoneAlt /> 13463800845
@@ -141,7 +141,7 @@ const Footer: React.FC = () => {
 
             {/* Location (Con Enlace a Google Maps) */}
             <div>
-              <h3 className="font-semibold text-2xl mb-3">LOCATION</h3>
+              <p className="font-semibold text-2xl mb-3">LOCATION</p>
               <a
                 href="https://www.google.com/maps/place/New+Gen+Patio+LLC+%2F+Aluminum+Pergola+Builders+in+Houston"
                 target="_blank"
@@ -155,7 +155,7 @@ const Footer: React.FC = () => {
 
             {/* Schedules */}
             <div>
-              <h3 className="font-semibold text-2xl mb-3">SCHEDULES</h3>
+              <p className="font-semibold text-2xl mb-3">SCHEDULES</p>
               <p className="text-white/80">Monday - Friday: 8:00 AM - 6:00 PM</p>
               <p className="text-white/80">Saturday: 9:00 AM - 4:00 PM</p>
               <p className="text-white/80">Sunday: Closed</p>
@@ -206,7 +206,7 @@ const Footer: React.FC = () => {
         </div>
 
           {/* Navigation con Separadores "•" */}
-          <h3 className="text-white/90 text-xl font-semibold mt-2">Navigation</h3>
+          <p className="text-white/90 text-xl font-semibold mt-2">Navigation</p>
           <div className="flex flex-wrap justify-center text-white text-sm mt-4 gap-2">
             {["services", "our-promise", "who-we-are", "blogs", "contact"].map((id, index, array) => {
               const routeMap: { [key: string]: string } = {

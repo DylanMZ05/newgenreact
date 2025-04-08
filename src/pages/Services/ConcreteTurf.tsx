@@ -28,9 +28,6 @@ const imagesConcrete = generateImagePaths("assets/images/Products/AdditionalServ
 const ConcreteTurf: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="concrete-turf-heading">
-      <header className="sr-only">
-        <h1 id="concrete-turf-heading">Concrete and Turf Installation in Houston – Low Maintenance Landscaping</h1>
-      </header>
 
       <SectionBlock sections={sectionsData} />
       <MarqueeBanner />

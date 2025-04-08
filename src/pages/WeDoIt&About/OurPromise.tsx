@@ -20,9 +20,7 @@ const OurPromise: React.FC = () => {
       lang="en"
       aria-labelledby="process-heading"
     >
-      <header className="sr-only">
-        <h1 id="process-heading">How we do it – How We Do It</h1>
-      </header>
+
 
       <SectionBlock sections={sectionsData} />
       <MarqueeBanner />

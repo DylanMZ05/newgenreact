@@ -7,7 +7,7 @@ const FreeQuoteButton = () => {
   return (
     <>
       <nav className="text-center mt-10">
-        <h3 className="text-2xl font-semibold">Do you want to get a Free Quote?</h3>
+        <p className="text-2xl font-semibold">Do you want to get a Free Quote?</p>
         
         <div className="flex justify-center">
           <Link

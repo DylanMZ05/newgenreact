@@ -28,9 +28,6 @@ const imagesTraditional = generateImagePaths("assets/images/Products/OutdoorKitc
 const OutdoorKitchen: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="outdoor-kitchen-heading">
-      <header className="sr-only">
-        <h1 id="outdoor-kitchen-heading">Custom Outdoor Kitchens in Houston – Built for Entertaining</h1>
-      </header>
 
       <SectionBlock sections={sectionsData} />
 

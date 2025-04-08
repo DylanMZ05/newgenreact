@@ -16,9 +16,6 @@ const AboutUsPage: React.FC = () => {
 
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="about-us-heading">
-      <header className="sr-only">
-        <h1 id="about-us-heading">About Us - New Gen Patio</h1>
-      </header>
 
       <section className="w-full">
         {/* Sección 1 */}
