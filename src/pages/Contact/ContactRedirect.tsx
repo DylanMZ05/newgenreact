@@ -13,7 +13,7 @@ const ContactRedirect = () => {
             {[
               {
                 icon: <FiFileText className="text-[#0d4754] w-12 h-12 mx-auto mb-2" />,
-                text: "Want to receive a free quote? This is your option.",
+                text: "Want to personalize your project? Fill out this custom form and get a free online estimate.",
                 button: "Free Quote",
                 to: "/freequote",
                 external: false,
@@ -27,7 +27,7 @@ const ContactRedirect = () => {
               },
               {
                 icon: <FiDollarSign className="text-[#0d4754] w-12 h-12 mx-auto mb-2" />,
-                text: "Want to get financing for your project? Try this.",
+                text: "Want to estimate your financing options? Click here to see how it works.",
                 button: "Get Financing",
                 to: "/calculator",
                 external: false,
