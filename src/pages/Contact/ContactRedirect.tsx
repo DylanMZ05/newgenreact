@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FiFileText, FiMessageCircle, FiDollarSign } from "react-icons/fi";
 import BlockSection from "../../components/BlockSection";
 import MarqueeBanner from "../../components/MarqueeBanner";
 
@@ -11,58 +12,53 @@ const ContactRedirect = () => {
           <div className="grid grid-cols-1 gap-6 w-full max-w-md md:max-w-6xl md:grid-cols-3">
             {[
               {
-                title: "Free Quote",
-                image: "/assets/images/Contact/James.png",
-                name: "James M.",
-                desc: (
-                  <>
-                    <strong className="text-black/90">James M.</strong> wanted a <strong className="text-black/90">formal quote</strong> for his project and filled out our <strong className="text-black/90">custom online form</strong>.
-                  </>
-                ),
+                icon: <FiFileText className="text-[#0d4754] w-12 h-12 mx-auto mb-2" />,
+                text: "Want to receive a free quote? This is your option.",
+                button: "Free Quote",
                 to: "/freequote",
+                external: false,
               },
               {
-                title: "Contact Us",
-                image: "/assets/images/Contact/Emma.png",
-                name: "Emma G.",
-                desc: (
-                  <>
-                    <strong className="text-black/90">Emma G.</strong> had a few questions and <strong className="text-black/90">reached out</strong> to our <strong className="text-black/90">support team</strong> to get answers.
-                  </>
-                ),
-                to: "/formpage",
+                icon: <FiMessageCircle className="text-[#0d4754] w-12 h-12 mx-auto mb-2" />,
+                text: "Want to speak directly with the team? Click here.",
+                button: "Contact Us",
+                to: "https://wa.me/13463800845",
+                external: true,
               },
               {
-                title: "Financing",
-                image: "/assets/images/Contact/Isaiah.png",
-                name: "Iasiah T.",
-                desc: (
-                  <>
-                    <strong className="text-black/90">Iasiah T.</strong> wanted to know how to <strong className="text-black/90">finance his project</strong> and followed these steps.
-                  </>
-                ),
+                icon: <FiDollarSign className="text-[#0d4754] w-12 h-12 mx-auto mb-2" />,
+                text: "Want to get financing for your project? Try this.",
+                button: "Get Financing",
                 to: "/calculator",
+                external: false,
               },
-            ].map((card, index) => (
+            ].map((item, index) => (
               <div
                 key={index}
                 className="bg-white rounded-2xl shadow-md text-center p-6 flex flex-col justify-between"
               >
                 <div>
-                  <h2 className="text-xl font-bold mb-2">{card.title}</h2>
-                  <img
-                    src={card.image}
-                    alt={card.name}
-                    className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
-                  />
-                  <p className="text-gray-700 mb-4">{card.desc}</p>
+                  {item.icon}
+                  <div className="bg-orange-600 h-1 w-5 rounded-full mx-auto mb-4"></div>
+                  <p className="text-gray-700 font-medium">{item.text}</p>
                 </div>
-                <Link
-                  to={card.to}
-                  className="mt-auto mx-auto w-30 bg-orange-600 text-white font-semibold text-sm text-center px-4 py-2 rounded-full hover:bg-orange-500 transition"
-                >
-                  {card.title}
-                </Link>
+                {item.external ? (
+                  <a
+                    href={item.to}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 mx-auto w-30 bg-[#0d4754] text-white font-semibold text-sm text-center px-4 py-2 rounded-full hover:bg-orange-500 transition"
+                  >
+                    {item.button}
+                  </a>
+                ) : (
+                  <Link
+                    to={item.to}
+                    className="mt-6 mx-auto w-30 bg-[#0d4754] text-white font-semibold text-sm text-center px-4 py-2 rounded-full hover:bg-orange-500 transition"
+                  >
+                    {item.button}
+                  </Link>
+                )}
               </div>
             ))}
           </div>
