@@ -6,6 +6,8 @@ import SectionBlock from "../../components/SectionBlock";
 import WhyUsLink from "./components/WhyUsLink";
 import Services from "../Home/services/services";
 
+import FreeQuoteButton from "../../components/FreeQuoteButton";
+
 const sectionsData = [
   {
     id: 1,
@@ -72,6 +74,7 @@ const Cantilever: React.FC = () => {
         ].map((section, index) => (
           <ImgTxtSection key={index} {...section} />
         ))}
+        <FreeQuoteButton />
       </div>
 
       <WhyUsLink backgroundImage={backgroundImage} />
