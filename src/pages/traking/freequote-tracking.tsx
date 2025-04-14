@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 
-// ✅ Declaración global para el Pixel
 declare global {
   interface Window {
     fbq: (event: string, action: string) => void;
@@ -9,25 +8,30 @@ declare global {
 
 const FreeQuoteTracking = () => {
   useEffect(() => {
-    // 1. Leer mensaje desde sessionStorage
     const msg = sessionStorage.getItem("whatsappMessage");
 
-    // 2. Disparar el evento del Pixel
-    if (typeof window.fbq === "function") {
-      window.fbq("track", "Lead");
-    }
+    setTimeout(() => {
+      if (typeof window.fbq === "function") {
+        window.fbq("track", "Lead");
+        console.log("📩 Pixel Lead event sent");
+      } else {
+        console.warn("⚠️ fbq is not defined");
+      }
+    }, 300);
 
-    // 3. Redirigir a WhatsApp
-    if (msg) {
-      const whatsappUrl = `https://wa.me/13463800845?text=${encodeURIComponent(msg)}`;
-      setTimeout(() => {
+    setTimeout(() => {
+      if (msg) {
+        const whatsappUrl = `https://wa.me/13463800845?text=${encodeURIComponent(msg)}`;
         window.location.href = whatsappUrl;
-      }, 500);
-    }
+      }
+    }, 2000);
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen gap-6">
+      {/* Spinner azul */}
+      <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+
       <h1 className="text-xl text-center px-4">
         Tracking your request... You’ll be redirected to WhatsApp shortly.
       </h1>

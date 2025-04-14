@@ -170,7 +170,7 @@ const Step: React.FC<StepProps> = ({
             disabled={!allRequiredFieldsFilled}
             className={`w-full py-2 rounded-full transition ${
               allRequiredFieldsFilled
-                ? "bg-green-500 text-white hover:bg-green-600"
+                ? "bg-green-500 text-white hover:bg-green-600 cursor-pointer"
                 : "bg-gray-400 text-gray-700 cursor-not-allowed"
             } mt-4`}
           >
@@ -200,7 +200,7 @@ const Step: React.FC<StepProps> = ({
           <div className="bg-white p-6 mx-5 rounded-lg shadow-lg text-center relative">
             <button
               onClick={() => setShowPopup(false)}
-              className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
+              className="absolute top-3 right-3 text-gray-600 hover:text-gray-800 cursor-pointer"
             >
               <X size={20} />
             </button>
@@ -215,7 +215,7 @@ const Step: React.FC<StepProps> = ({
                 sessionStorage.setItem("whatsappMessage", message);
                 window.open("/get-a-free-quote-houston-tracking", "_blank");
               }}
-              className="mt-4 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600"
+              className="mt-4 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 cursor-pointer"
             >
               Go to WhatsApp
             </button>
