@@ -89,7 +89,7 @@ const OutdoorKitchen: React.FC = () => {
       </div>
 
       <WhyUsLink backgroundImage={backgroundImage} />
-      <Services />
+      <Services showQuoteButton={false}/>
     </section>
   );
 };

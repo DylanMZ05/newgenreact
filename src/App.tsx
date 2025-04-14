@@ -52,7 +52,7 @@ import FreeQuoteTracking from "./pages/traking/freequote-tracking";
 const sectionsData3 = [
   {
     id: 6,
-    title: "Custom Aluminum Pergolas and Over Patio Builders in Houston",
+    title: "Custom Aluminum Pergolas and Cover Patio Builders in Houston",
     description: "Discover our modern, innovative solutions designed to enhance outdoor living with style, functionality, and durability.",
     backgroundImage: "assets/images/Products/Patios&Pergolas/Attached/04.webp",
   },

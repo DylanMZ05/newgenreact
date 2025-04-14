@@ -1,3 +1,4 @@
+import React from "react";
 import CardGrid from "./CardGrid";
 import FreeQuoteButton from "../../../components/FreeQuoteButton";
 
@@ -12,7 +13,11 @@ const extraServices = [
   { title: "Concrete & Turf", imageUrl: "assets/images/Products/AdditionalServices/1.webp", link: "/concrete-and-turf-installation-houston" },
 ];
 
-const Services: React.FC = () => {
+interface ServicesProps {
+  showQuoteButton?: boolean;
+}
+
+const Services: React.FC<ServicesProps> = ({ showQuoteButton = true }) => {
   return (
     <section id="services" aria-labelledby="services-heading" className="flex flex-col items-center justify-center py-12 px-6">
       <header className="text-center max-w-2xl">
@@ -36,7 +41,7 @@ const Services: React.FC = () => {
         <CardGrid cards={extraServices} />
       </div>
 
-      <FreeQuoteButton />
+      {showQuoteButton && <FreeQuoteButton />}
     </section>
   );
 };

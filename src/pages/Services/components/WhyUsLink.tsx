@@ -17,7 +17,7 @@ const WhyUsLink = ({ backgroundImage }: WhyUsLinkProps) => {
       <div id="our-promise" className="flex flex-col w-full items-center bg-black/60 py-12 px-6 text-center">
         <header>
           <h2 id="why-us-heading" className="font-semibold text-4xl text-white">Why Us?</h2>
-          <div className="w-24 h-1 bg-orange-600 mt-4 mb-3 rounded-full"></div>
+          <div className="w-24 h-1 bg-orange-600 mt-4 mb-3 mx-auto rounded-full"></div>
         </header>
 
         <p className="max-w-[1080px] text-lg text-white/80 mb-6">
