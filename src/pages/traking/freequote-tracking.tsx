@@ -46,7 +46,7 @@ const FreeQuoteTracking = () => {
 
             <p className="text-xl font-semibold mb-2">Message Copied</p>
             <p className="text-red-500/80 font-semibold text-sm mb-4">
-              If you use WhatsApp Desktop, paste the message when you open the chat
+            If your message is not displayed correctly when you enter the chat, paste the message into the chat.
             </p>
 
             <button
