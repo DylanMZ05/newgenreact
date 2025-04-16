@@ -1,40 +1,65 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 declare global {
   interface Window {
     fbq: (event: string, action: string) => void;
+    gtag: (...args: [string, string, Record<string, unknown>?]) => void;
   }
 }
 
 const FreeQuoteTracking = () => {
+  const [showPopup, setShowPopup] = useState(false);
+  const [message, setMessage] = useState("");
+
   useEffect(() => {
-    const msg = sessionStorage.getItem("whatsappMessage");
+    const msg = sessionStorage.getItem("whatsappMessage") || "";
+    setMessage(msg);
 
     setTimeout(() => {
       if (typeof window.fbq === "function") {
         window.fbq("track", "Lead");
         console.log("📩 Pixel Lead event sent");
-      } else {
-        console.warn("⚠️ fbq is not defined");
       }
     }, 300);
 
     setTimeout(() => {
-      if (msg) {
-        const whatsappUrl = `https://wa.me/13463800845?text=${encodeURIComponent(msg)}`;
-        window.location.href = whatsappUrl;
-      }
-    }, 2000);
+      setShowPopup(true);
+    }, 1200);
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen gap-6">
-      {/* Spinner azul */}
-      <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+    <div className="relative min-h-screen bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] bg-cover bg-center flex items-center justify-center px-4">
+      {/* Capa oscura */}
+      <div className="absolute inset-0 bg-black/60 z-0"></div>
 
-      <h1 className="text-xl text-center px-4">
-        Tracking your request... You’ll be redirected to WhatsApp shortly.
-      </h1>
+      {/* Contenido */}
+      <div className="relative z-10 w-full max-w-md flex flex-col items-center justify-center">
+        {!showPopup ? (
+          <>
+            {/* Spinner de carga */}
+            <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-6"></div>
+            <p className="text-white text-xl text-center">Tracking your request...</p>
+          </>
+        ) : (
+          <div className="bg-white p-6 rounded-lg shadow-xl w-full text-center relative">
+
+
+            <p className="text-xl font-semibold mb-2">Message Copied</p>
+            <p className="text-red-500/80 font-semibold text-sm mb-4">
+              If you use WhatsApp Desktop, paste the message when you open the chat
+            </p>
+
+            <button
+              onClick={() => {
+                window.location.href = `https://wa.me/13463800845?text=${encodeURIComponent(message)}`;
+              }}
+              className="mt-2 w-full bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition cursor-pointer"
+            >
+              Go to WhatsApp
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

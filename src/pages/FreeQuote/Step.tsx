@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { StepData } from "../../hooks/useStepNavigation";
-import { X } from "lucide-react";
 
 interface StepProps {
   stepData: StepData;
@@ -19,7 +18,6 @@ const Step: React.FC<StepProps> = ({
   formData,
   selections,
 }) => {
-  const [showPopup, setShowPopup] = useState(false);
   const [noMeasurements, setNoMeasurements] = useState(false);
 
   const isMeasurementStep = stepData.fields?.some(field =>
@@ -55,20 +53,6 @@ const Step: React.FC<StepProps> = ({
     • *Zip Code:* ${formData.zip || "Not provided"}
     • *Notes:* ${formData.notes || "None"}
   `;
-
-  const copyToClipboard = (message: string) => {
-    navigator.clipboard.writeText(message).then(() => setShowPopup(true));
-  };
-
-  const handleSendWhatsApp = () => {
-    if (!allRequiredFieldsFilled) {
-      alert("Please complete all required fields before submitting.");
-      return;
-    }
-
-    const message = buildMessage();
-    copyToClipboard(message);
-  };
 
   const handleIDontKnow = () => {
     setNoMeasurements(true);
@@ -166,7 +150,11 @@ const Step: React.FC<StepProps> = ({
           )}
 
           <button
-            onClick={handleSendWhatsApp}
+            onClick={() => {
+              const message = buildMessage();
+              sessionStorage.setItem("whatsappMessage", message);
+              window.open("/get-a-free-quote-houston-tracking", "_blank");
+            }}
             disabled={!allRequiredFieldsFilled}
             className={`w-full py-2 rounded-full transition ${
               allRequiredFieldsFilled
@@ -193,34 +181,6 @@ const Step: React.FC<StepProps> = ({
         <button onClick={previousStep} className="mt-4 text-black/70 hover:text-black/90 cursor-pointer transition">
           Back
         </button>
-      )}
-
-      {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/70 bg-opacity-50 z-50">
-          <div className="bg-white p-6 mx-5 rounded-lg shadow-lg text-center relative">
-            <button
-              onClick={() => setShowPopup(false)}
-              className="absolute top-3 right-3 text-gray-600 hover:text-gray-800 cursor-pointer"
-            >
-              <X size={20} />
-            </button>
-
-            <p className="text-lg font-semibold">Message Copied</p>
-            <p className="text-red-500/80 font-semibold">
-              If you use WhatsApp Desktop, copy it when you enter the chat
-            </p>
-            <button
-              onClick={() => {
-                const message = buildMessage();
-                sessionStorage.setItem("whatsappMessage", message);
-                window.open("/get-a-free-quote-houston-tracking", "_blank");
-              }}
-              className="mt-4 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 cursor-pointer"
-            >
-              Go to WhatsApp
-            </button>
-          </div>
-        </div>
       )}
     </div>
   );
