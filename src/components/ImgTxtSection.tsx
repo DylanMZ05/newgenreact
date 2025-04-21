@@ -7,6 +7,7 @@ interface ImageTextSectionProps {
   imagePosition: "left" | "right";
   stepLabel?: string;
   imageProps?: React.ImgHTMLAttributes<HTMLImageElement>;
+  children?: React.ReactNode;
 }
 
 const ImageTextSection: React.FC<ImageTextSectionProps> = ({
@@ -15,12 +16,13 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
   text,
   imageUrl,
   imagePosition = "right",
+  children, // <<<<--- AGREGA ESTO AQUÍ EN LA DESESTRUCTURACIÓN
 }) => {
   const sectionId = `section-title-${title.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
     <article
-      className={`flex flex-col  ${imagePosition === "left" ? "sm:flex-row-reverse" : "sm:flex-row"} 
+      className={`flex flex-col ${imagePosition === "left" ? "sm:flex-row-reverse" : "sm:flex-row"} 
         max-w-[1000px] gap-5 mt-10`}
       aria-labelledby={sectionId}
     >
@@ -40,13 +42,17 @@ const ImageTextSection: React.FC<ImageTextSectionProps> = ({
 
       {/* Imagen */}
       <figure className="sm:w-1/2 px-5">
-        <img
-          src={imageUrl}
-          alt={title}
-          loading="lazy"
-          className="rounded-lg shadow-md w-150 object-cover aspect-[3/2]"
-          onError={(e) => (e.currentTarget.src = "/assets/images/default-image.webp")} // Imagen por defecto en caso de error
-        />
+        {children ? (
+          children
+        ) : (
+          <img
+            src={imageUrl}
+            alt={title}
+            loading="lazy"
+            className="rounded-lg shadow-md w-150 object-cover aspect-[3/2]"
+            onError={(e) => (e.currentTarget.src = "/assets/images/default-image.webp")}
+          />
+        )}
       </figure>
     </article>
   );
