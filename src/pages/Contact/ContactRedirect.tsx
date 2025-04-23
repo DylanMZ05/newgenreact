@@ -38,7 +38,7 @@ const ContactRedirect = () => {
         <BlockSection />
         <main className="bg-black/60 w-full min-h-[calc(100vh-80px)] flex flex-col items-center justify-center px-4 py-10">
           <h1 className="text-white/90 text-3xl md:text-4xl font-bold text-center mb-2 max-w-3xl leading-tight">
-            Contact New Gen Patio – Request a Consultation Today
+            Contact New Gen Patio – Request a FREE Consultation Today
           </h1>
           <div
                     className="bg-orange-500 h-1 w-50 rounded-full mx-auto mb-4"

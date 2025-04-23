@@ -49,7 +49,7 @@ const AboutUsPage: React.FC = () => {
           <h2 className="font-semibold text-4xl mb-3 text-black/90">Who We Are</h2>
           <div className="w-24 h-1 bg-[#0d4754] mt-4 mb-3 mx-auto rounded-full"></div>
           <p className="font-semibold text-black/80">
-            We are visionaries who transform outdoor spaces into stunning, functional extensions of your home. With a passion for design, craftsmanship, and customer satisfaction, we create high-quality aluminum covered patios and pergolas that enhance your lifestyle.
+          We are passionate creators of outdoor spaces, transforming them into stunning, functional extensions of your home. With a deep love for design, craftsmanship, and customer satisfaction, we build high-quality aluminum covered patios and pergolas that enhance your lifestyle.
           </p>
         </header>
 

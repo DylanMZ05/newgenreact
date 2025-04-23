@@ -62,7 +62,7 @@ const Cantilever: React.FC = () => {
           {
             title: "Efficient Load Distribution",
             text: "High-strength aluminum beams (such as 2x8 or 2x10 profiles) are utilized to support the structure without additional supports. Additionally, insulated roofing panels enhance weight distribution, preventing warping or sagging over time.",
-            imageUrl: "assets/images/Products/Patios&Pergolas/Cantilever/06.webp",
+            imageUrl: "assets/images/Products/Patios&Pergolas/Cantilever/08.webp",
             imagePosition: "right" as const,
           },
           {
