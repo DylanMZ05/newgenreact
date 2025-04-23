@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface ImageSliderProps {
   images: string[];
@@ -7,22 +7,96 @@ interface ImageSliderProps {
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images, alt }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const totalSlides = images.length + 1; // +1 por el clon
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 4000);
+    if (images.length <= 1) return;
 
-    return () => clearInterval(interval);
-  }, [images]);
+    startAutoSlide();
+
+    return () => {
+      stopAutoSlide();
+    };
+  }, [images.length]);
+
+  const startAutoSlide = () => {
+    stopAutoSlide();
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prev) => prev + 1);
+      setIsTransitioning(true);
+    }, 4000);
+  };
+
+  const stopAutoSlide = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+  };
+
+  const handleTransitionEnd = () => {
+    if (currentIndex === images.length) {
+      // Terminó la transición al clon -> salta sin animar al index 0
+      setIsTransitioning(false);
+      setCurrentIndex(0);
+    }
+  };
+
+  useEffect(() => {
+    // Cuando se salta al index 0 sin transición, la volvemos a activar
+    if (!isTransitioning && currentIndex === 0) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsTransitioning(true);
+        });
+      });
+    }
+  }, [currentIndex, isTransitioning]);
+
+  if (images.length === 0) return null;
+
+  if (images.length === 1) {
+    return (
+      <img
+        src={images[0]}
+        alt={alt}
+        className="rounded-lg shadow-md w-full object-cover aspect-[3/2]"
+      />
+    );
+  }
 
   return (
-    <img
-      src={images[currentIndex]}
-      alt={alt}
-      className="rounded-lg shadow-md w-150 object-cover aspect-[3/2] transition-opacity duration-500 ease-in-out"
-      loading="lazy"
-    />
+    <div className="relative w-full overflow-hidden aspect-[3/2] rounded-lg shadow-md">
+      <div
+        ref={sliderRef}
+        className={`flex h-full ${
+          isTransitioning ? "transition-transform duration-500 ease-in-out" : ""
+        }`}
+        onTransitionEnd={handleTransitionEnd}
+        style={{
+          width: `${totalSlides * 100}%`,
+          transform: `translateX(-${(currentIndex * 100) / totalSlides}%)`,
+        }}
+      >
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`${alt} - ${index}`}
+            className="w-full h-full object-cover flex-shrink-0"
+            style={{ width: `${100 / totalSlides}%` }}
+          />
+        ))}
+        {/* Clon de la primera imagen */}
+        <img
+          src={images[0]}
+          alt={`${alt} - clone`}
+          className="w-full h-full object-cover flex-shrink-0"
+          style={{ width: `${100 / totalSlides}%` }}
+        />
+      </div>
+    </div>
   );
 };
 
