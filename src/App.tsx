@@ -164,8 +164,8 @@ const Layout = memo(() => {
         <Route path="/concrete-and-turf-installation-houston" element={<ConcreteTurf />} />
         <Route path="/patio-financing-houston" element={<Calculator />} />
         <Route path="/financing-options" element={<FinancingOptions />} />
-        <Route path="/blogs/blog/:id" element={<BlogPage />} />
-        <Route path="/blog/:id" element={<BlogPage />} />
+        <Route path="/blogs/blog/:slug" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPage />} />
         <Route path="/get-a-free-quote-houston" element={<FreeQuote />} />
         <Route path="/contact-us" element={<ContactRedirect />} />
         <Route path="/formpage" element={<FormPage />} />

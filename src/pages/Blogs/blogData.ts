@@ -1,6 +1,7 @@
 export const blogs = [
   {
     id: 1,
+    slug: "aluminum-vs-wood-pergolas",
     title: "Aluminum vs. Wood Pergolas: Which Is the Best Choice for Your Outdoor Space?",
     subtitle: "Choosing the right pergola material impacts durability, maintenance, and aesthetics.",
     imageUrl: "assets/images/Products/Patios&Pergolas/Attached/01.webp",
@@ -75,4 +76,101 @@ export const blogs = [
 
     date: "2025-03-14"
   },
+  {
+    id: 2,
+    slug: "best-patio-cover-types",
+    title: "Best Patio Cover Types Based on Your Outdoor Space",
+    subtitle: "Discover the ideal cover for your patio based on your layout, style, and goals.",
+    imageUrl: "assets/images/Products/Patios&Pergolas/Attached/10.webp",
+    date: "2025-04-23",
+    content: [
+      {
+        text: "Designing the perfect patio isn’t just about style—it’s also about choosing the right type of space you have. The ideal cover can make the difference between a barely usable patio and one that becomes your favorite spot. At **New Gen Patio**, we help you find the best solution based on your surroundings, lifestyle, and needs."
+      },
+  
+      { text: "****1. Freestanding Pergola****" },
+      { text: "✅ ***Best suited for:*** Spacious patios or garden areas detached from the house." },
+      { text: "● Independent from your home’s structure." },
+      { text: "● Creates a centralized space for gatherings, fire pits, or hot tubs." },
+      { text: "● Fully customizable in size, height, and finish." },
+      { text: "💡 *Perfect if you're looking for a focal point in your garden or want a dedicated entertainment space.*" },
+      
+      { text: "****3. Attached Covered Patio****" },
+      { text: "✅ ***Best suited for:*** Patios that connect directly to the house." },
+      { text: "● Seamlessly extends your living room into the outdoors." },
+      { text: "● Protects furniture and doors from sun or rain." },
+      { text: "● Can be integrated with lighting, fans, and power outlets." },
+      { text: "💡 *An ideal solution for those who enjoy outdoor dining or hosting without leaving the comfort of home.*" },
+  
+      { text: "****4. How to Choose the Ideal Cover for You****" },
+      { text: "The perfect patio cover depends on three key factors:" },
+      { text: "✅ The size and shape of your patio." },
+      { text: "✅ The functionality you expect (dining, lounge area, outdoor kitchen, etc.)." },
+      { text: "✅ Your architectural style and desired level of privacy." },
+
+      { text: "****5. Why Choose New Gen Patio?****" },
+      { text: "At **New Gen Patio**, we design **custom solutions** using high-quality materials like insulated, weather-resistant aluminum. Our team supports you from the design phase all the way through to final installation—ensuring your patio not only looks amazing but also lasts for life." },
+  
+      { text: "***Ready to transform your space?***" },
+      { text: "Request your **free consultation** today and receive your 3D design at no cost." },
+      { text: "📍 Cypress, Spring, Houston and surrounding areas." },
+
+      { text: "****Best Patio Cover Types Based on Your Outdoor Space****" },
+      { text: "Creating the perfect patio doesn’t just depend on aesthetics—it depends on choosing the right structure for your specific layout. The ideal cover can transform a simple space into a functional and enjoyable extension of your home. At **New Gen Patio**, tailored solutions are provided based on your environment, lifestyle, and design goals." },
+      
+      { image: "assets/images/Blogs/Blog-2/01.webp" },
+
+      { text: "****1. Freestanding Pergola****" },
+      { text: "A standalone pergola that can be placed anywhere in your backyard, offering a versatile and customizable space for relaxation, entertainment, or shade." },
+      { text: "✅ ***Best suited for:*** Large patios or standalone garden areas." },
+      { text: "● Installed independently from your home’s structure." },
+      { text: "● Designed to become a central hub for gatherings, hot tubs, or fire pits." },
+      { text: "● Fully customizable in height, dimensions, and finishes." },
+      { text: "💡 *Perfect when a distinct, dedicated space is desired in the backyard.*" },
+    
+      { image: "assets/images/Blogs/Blog-2/02.webp" },
+
+      { text: "****2. Cantilevered Pergola****" },
+      { text: "A modern, innovative pergola with a cantilevered structure, providing shade without traditional corner posts, resulting in a clean and sophisticated look." },
+      { text: "✅ ***Best suited for:*** Areas with restricted space or scenic views." },
+      { text: "● Designed without front posts for open visual flow." },
+      { text: "● Ideal for poolside areas or patios with panoramic landscapes." },
+      { text: "● Offers shade without obstructing pathways or sightlines." },
+      { text: "💡 *A sleek and modern option where elegance and space efficiency are prioritized.*" },
+    
+      { image: "assets/images/Blogs/Blog-2/03.webp" },
+
+      { text: "****3. Attached Covered Patio****" },
+      { text: "An attached pergola that seamlessly connects to your home’s structure, providing shade and protection while maintaining a smooth transition between indoor and outdoor spaces." },
+      { text: "✅ ***Best suited for:*** Patios that connect directly to the home." },
+      { text: "● Seamlessly extends the indoor living space outward." },
+      { text: "● Provides shelter from sun and rain." },
+      { text: "● Easily integrated with lighting, fans, and electrical outlets." },
+      { text: "💡 *An ideal solution for outdoor dining or hosting guests with home-level comfort.*" },
+    
+      { text: "****4. How the Best Option Is Chosen****" },
+      { text: "The right patio cover is selected based on:" },
+      { text: "✅ Patio layout and size." },
+      { text: "✅ Desired function (dining area, lounge, outdoor kitchen, etc.)." },
+      { text: "✅ Preferred architectural style and privacy level." },
+
+      { text: "****5. Why New Gen Patio?****" },
+      { text: "At **New Gen Patio**, structures are crafted using high-quality insulated aluminum, designed to last and impress. Every project is guided by a professional team—from the initial consultation to the final installation—ensuring a result that feels personal, premium, and built for life." },
+
+      { text: "***Ready to reimagine your space?***" },
+      { text: "A **free consultation** and custom 3D design will be provided." },
+      { text: "📍 Serving Cypress, Spring, Houston, and surrounding areas." },
+      
+      { text: "****Who We Are: The Vision Behind New Gen Patio****" },
+      { text: "**New Gen Patio** was born from the shared vision and friendship of Rafael and Alejandro, two passionate professionals united by a common dream: to create a company that transforms outdoor spaces into meaningful experiences." },
+      { text: "They identified a clear market need—homes and businesses were seeking more than just structures. People longed for spaces to connect, unwind, and enjoy, without worrying about maintenance or time." },
+      { text: "Guided by values like honesty, innovation, and human connection, **New Gen Patio** creates environments that improve quality of life, foster meaningful relationships, and elevate both the aesthetic and emotional value of each property." },
+      { text: "Every space is built with care and purpose—to become a place where people gather, relax, and create lasting memories **always under a shade above the rest.**" },
+
+      { text: "They saw that people weren’t just looking for patios—they were searching for **moments of peace, connection, and beauty** in everyday life." },
+      { text: "With honesty, innovation, and heart at the core of everything they do, New Gen Patio designs spaces that bring people together, add value to every home, and become the backdrop for unforgettable memories—**all under a shade made to last.**" },
+
+      { text: "They filled a gap in the market for modern, functional, and low-maintenance patios and pergolas—bringing purposeful, precise design to residential and commercial properties alike." },
+    ]
+  }
 ];

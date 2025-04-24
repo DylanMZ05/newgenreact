@@ -6,8 +6,8 @@ import BlogSection from "../Home/BlogsSection";
 import MarqueeBanner from "../../components/MarqueeBanner";
 
 const BlogPage: React.FC = () => {
-  const { id } = useParams();
-  const blog = blogs.find((b) => b.id === Number(id));
+  const { slug } = useParams();
+  const blog = blogs.find((b) => b.slug === slug);
 
 
 

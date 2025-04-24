@@ -45,11 +45,11 @@ const BlogSection: React.FC = () => {
                 key={blog.id}
                 className="bg-white border border-gray-600/60 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-[1.02] cursor-pointer"
                 style={{ gridRow: index >= 2 ? "span 1 / span 1" : "auto" }} // Forzar 2 filas en desktop
-                aria-labelledby={`blog-title-${blog.id}`}
+                aria-labelledby={`blog-title-${blog.slug}`}
               >
                 {/* Envolvemos todo el contenido del artículo dentro de un Link */}
                 <Link
-                  to={`/blog/${blog.id}`}
+                  to={`/blog/${blog.slug}`}
                   className="block"
                   onClick={handleScrollToTop}
                 >

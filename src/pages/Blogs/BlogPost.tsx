@@ -87,7 +87,7 @@ const BlogPost: React.FC<{
             return null;
           })}
           
-          <p className="text-gray-600 text-md mt-5">{formattedDate}</p>
+          <p className="text-black text-md mt-5 font-semibold">{formattedDate}</p>
         </article>
       </section>
     </>

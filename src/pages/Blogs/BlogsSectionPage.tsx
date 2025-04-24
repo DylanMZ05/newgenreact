@@ -33,18 +33,17 @@ const BlogsSectionPage: React.FC = () => {
                 day: "numeric",
               });
 
-              // Resolver URL de la imagen correctamente
               const resolvedImageUrl = blog.imageUrl?.startsWith("http")
                 ? blog.imageUrl
                 : `${baseUrl}${blog.imageUrl}`;
 
               return (
                 <article
-                  key={blog.id}
+                  key={blog.slug}
                   className="bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-[1.02] cursor-pointer"
-                  aria-labelledby={`blog-title-${blog.id}`}
+                  aria-labelledby={`blog-title-${blog.slug}`}
                 >
-                  <Link to={`/blog/${blog.id}`} onClick={handleScrollToTop} className="block">
+                  <Link to={`/blog/${blog.slug}`} onClick={handleScrollToTop} className="block">
                     <figure className="w-full h-64">
                       <img
                         src={resolvedImageUrl}
@@ -56,7 +55,7 @@ const BlogsSectionPage: React.FC = () => {
                       <figcaption className="sr-only">{blog.title}</figcaption>
                     </figure>
                     <div className="p-5">
-                      <h3 id={`blog-title-${blog.id}`} className="text-xl font-semibold text-gray-800">
+                      <h3 id={`blog-title-${blog.slug}`} className="text-xl font-semibold text-gray-800">
                         {blog.title}
                       </h3>
                       <p className="text-gray-600 mt-2 text-sm">
@@ -64,8 +63,6 @@ const BlogsSectionPage: React.FC = () => {
                           ? `${blog.subtitle.substring(0, maxSubtitleLength)}...`
                           : blog.subtitle}
                       </p>
-
-                      {/* Flex para mantener alineado el botón y la fecha */}
                       <div className="flex justify-between items-center mt-3">
                         <span className="text-gray-500 text-sm text-right">{formattedDate}</span>
                       </div>
