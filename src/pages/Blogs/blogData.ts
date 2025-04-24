@@ -160,17 +160,6 @@ export const blogs = [
       { text: "***Ready to reimagine your space?***" },
       { text: "A **free consultation** and custom 3D design will be provided." },
       { text: "📍 Serving Cypress, Spring, Houston, and surrounding areas." },
-      
-      { text: "****Who We Are: The Vision Behind New Gen Patio****" },
-      { text: "**New Gen Patio** was born from the shared vision and friendship of Rafael and Alejandro, two passionate professionals united by a common dream: to create a company that transforms outdoor spaces into meaningful experiences." },
-      { text: "They identified a clear market need—homes and businesses were seeking more than just structures. People longed for spaces to connect, unwind, and enjoy, without worrying about maintenance or time." },
-      { text: "Guided by values like honesty, innovation, and human connection, **New Gen Patio** creates environments that improve quality of life, foster meaningful relationships, and elevate both the aesthetic and emotional value of each property." },
-      { text: "Every space is built with care and purpose—to become a place where people gather, relax, and create lasting memories **always under a shade above the rest.**" },
-
-      { text: "They saw that people weren’t just looking for patios—they were searching for **moments of peace, connection, and beauty** in everyday life." },
-      { text: "With honesty, innovation, and heart at the core of everything they do, New Gen Patio designs spaces that bring people together, add value to every home, and become the backdrop for unforgettable memories—**all under a shade made to last.**" },
-
-      { text: "They filled a gap in the market for modern, functional, and low-maintenance patios and pergolas—bringing purposeful, precise design to residential and commercial properties alike." },
     ]
   }
 ];
