@@ -93,14 +93,14 @@ export const blogs = [
       { text: "● Independent from your home’s structure." },
       { text: "● Creates a centralized space for gatherings, fire pits, or hot tubs." },
       { text: "● Fully customizable in size, height, and finish." },
-      { text: "💡 *Perfect if you're looking for a focal point in your garden or want a dedicated entertainment space.*" },
+      { text: "💡 **Perfect if you're looking for a focal point in your garden or want a dedicated entertainment space.**" },
       
       { text: "****3. Attached Covered Patio****" },
       { text: "✅ ***Best suited for:*** Patios that connect directly to the house." },
       { text: "● Seamlessly extends your living room into the outdoors." },
       { text: "● Protects furniture and doors from sun or rain." },
       { text: "● Can be integrated with lighting, fans, and power outlets." },
-      { text: "💡 *An ideal solution for those who enjoy outdoor dining or hosting without leaving the comfort of home.*" },
+      { text: "💡 **An ideal solution for those who enjoy outdoor dining or hosting without leaving the comfort of home.**" },
   
       { text: "****4. How to Choose the Ideal Cover for You****" },
       { text: "The perfect patio cover depends on three key factors:" },
@@ -126,7 +126,7 @@ export const blogs = [
       { text: "● Installed independently from your home’s structure." },
       { text: "● Designed to become a central hub for gatherings, hot tubs, or fire pits." },
       { text: "● Fully customizable in height, dimensions, and finishes." },
-      { text: "💡 *Perfect when a distinct, dedicated space is desired in the backyard.*" },
+      { text: "💡 **Perfect when a distinct, dedicated space is desired in the backyard.**" },
     
       { image: "assets/images/Blogs/Blog-2/02.webp" },
 
@@ -136,7 +136,7 @@ export const blogs = [
       { text: "● Designed without front posts for open visual flow." },
       { text: "● Ideal for poolside areas or patios with panoramic landscapes." },
       { text: "● Offers shade without obstructing pathways or sightlines." },
-      { text: "💡 *A sleek and modern option where elegance and space efficiency are prioritized.*" },
+      { text: "💡 **A sleek and modern option where elegance and space efficiency are prioritized.**" },
     
       { image: "assets/images/Blogs/Blog-2/03.webp" },
 
@@ -146,7 +146,7 @@ export const blogs = [
       { text: "● Seamlessly extends the indoor living space outward." },
       { text: "● Provides shelter from sun and rain." },
       { text: "● Easily integrated with lighting, fans, and electrical outlets." },
-      { text: "💡 *An ideal solution for outdoor dining or hosting guests with home-level comfort.*" },
+      { text: "💡 **An ideal solution for outdoor dining or hosting guests with home-level comfort.**" },
     
       { text: "****4. How the Best Option Is Chosen****" },
       { text: "The right patio cover is selected based on:" },
