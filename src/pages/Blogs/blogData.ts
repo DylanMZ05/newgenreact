@@ -127,7 +127,7 @@ export const blogs = [
       
       { image: "assets/images/Blogs/Blog-2/01.webp" },
 
-      { link: { to: "/attached-covered-patio-houston", label: "****1. Freestanding Pergola****" } },
+      { link: { to: "/freestanding-covered-patio-houston", label: "****1. Freestanding Pergola****" } },
       { text: "A standalone pergola that can be placed anywhere in your backyard, offering a versatile and customizable space for relaxation, entertainment, or shade." },
       { text: "✅ ***Best suited for:*** Large patios or standalone garden areas." },
       { text: "● Installed independently from your home’s structure." },
