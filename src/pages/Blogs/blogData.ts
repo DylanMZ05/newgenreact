@@ -88,14 +88,21 @@ export const blogs = [
         text: "Designing the perfect patio isn’t just about style—it’s also about choosing the right type of space you have. The ideal cover can make the difference between a barely usable patio and one that becomes your favorite spot. At **New Gen Patio**, we help you find the best solution based on your surroundings, lifestyle, and needs."
       },
   
-      { text: "****1. Freestanding Pergola****" },
+      { link: { to: "/freestanding-covered-patio-houston", label: "****1. Freestanding Pergola****" } },
       { text: "✅ ***Best suited for:*** Spacious patios or garden areas detached from the house." },
       { text: "● Independent from your home’s structure." },
       { text: "● Creates a centralized space for gatherings, fire pits, or hot tubs." },
       { text: "● Fully customizable in size, height, and finish." },
       { text: "💡 **Perfect if you're looking for a focal point in your garden or want a dedicated entertainment space.**" },
       
-      { text: "****3. Attached Covered Patio****" },
+      { link: { to: "/cantilever-cover-patio-houston", label: "****2. Cantilevered Pergola****" } },
+      { text: "✅ ***Best suited for:*** Spaces with restrictions on front posts or panoramic views." },
+      { text: "● Sleek design with no front columns." },
+      { text: "● Ideal for poolside setups or patios with scenic views." },
+      { text: "● Provides shade without blocking movement or the landscape." },
+      { text: "💡 *An elegant option for those seeking a visually light and functional structure.*" },
+
+      { link: { to: "/attached-covered-patio-houston", label: "****3. Attached Covered Patio****" } },
       { text: "✅ ***Best suited for:*** Patios that connect directly to the house." },
       { text: "● Seamlessly extends your living room into the outdoors." },
       { text: "● Protects furniture and doors from sun or rain." },
@@ -108,7 +115,7 @@ export const blogs = [
       { text: "✅ The functionality you expect (dining, lounge area, outdoor kitchen, etc.)." },
       { text: "✅ Your architectural style and desired level of privacy." },
 
-      { text: "****5. Why Choose New Gen Patio?****" },
+      { link: { to: "/our-promise-patio-builders-houston", label: "****5. Why Choose New Gen Patio?****" } },
       { text: "At **New Gen Patio**, we design **custom solutions** using high-quality materials like insulated, weather-resistant aluminum. Our team supports you from the design phase all the way through to final installation—ensuring your patio not only looks amazing but also lasts for life." },
   
       { text: "***Ready to transform your space?***" },
@@ -120,7 +127,7 @@ export const blogs = [
       
       { image: "assets/images/Blogs/Blog-2/01.webp" },
 
-      { text: "****1. Freestanding Pergola****" },
+      { link: { to: "/attached-covered-patio-houston", label: "****1. Freestanding Pergola****" } },
       { text: "A standalone pergola that can be placed anywhere in your backyard, offering a versatile and customizable space for relaxation, entertainment, or shade." },
       { text: "✅ ***Best suited for:*** Large patios or standalone garden areas." },
       { text: "● Installed independently from your home’s structure." },
@@ -130,7 +137,7 @@ export const blogs = [
     
       { image: "assets/images/Blogs/Blog-2/02.webp" },
 
-      { text: "****2. Cantilevered Pergola****" },
+      { link: { to: "/cantilever-cover-patio-houston", label: "****2. Cantilevered Pergola****" } },
       { text: "A modern, innovative pergola with a cantilevered structure, providing shade without traditional corner posts, resulting in a clean and sophisticated look." },
       { text: "✅ ***Best suited for:*** Areas with restricted space or scenic views." },
       { text: "● Designed without front posts for open visual flow." },
@@ -140,7 +147,7 @@ export const blogs = [
     
       { image: "assets/images/Blogs/Blog-2/03.webp" },
 
-      { text: "****3. Attached Covered Patio****" },
+      { link: { to: "/attached-covered-patio-houston", label: "****3. Attached Covered Patio****" } },
       { text: "An attached pergola that seamlessly connects to your home’s structure, providing shade and protection while maintaining a smooth transition between indoor and outdoor spaces." },
       { text: "✅ ***Best suited for:*** Patios that connect directly to the home." },
       { text: "● Seamlessly extends the indoor living space outward." },
@@ -154,11 +161,17 @@ export const blogs = [
       { text: "✅ Desired function (dining area, lounge, outdoor kitchen, etc.)." },
       { text: "✅ Preferred architectural style and privacy level." },
 
-      { text: "****5. Why New Gen Patio?****" },
+      { link: { to: "/our-promise-patio-builders-houston", label: "****5. Why New Gen Patio?****" } },
       { text: "At **New Gen Patio**, structures are crafted using high-quality insulated aluminum, designed to last and impress. Every project is guided by a professional team—from the initial consultation to the final installation—ensuring a result that feels personal, premium, and built for life." },
 
       { text: "***Ready to reimagine your space?***" },
-      { text: "A **free consultation** and custom 3D design will be provided." },
+      {
+        inlineText: [
+          { text: "A " },
+          { link: { to: "/get-a-free-quote-houston", label: "free consultation" } },
+          { text: " and custom 3D design will be provided." }
+        ]
+      },
       { text: "📍 Serving Cypress, Spring, Houston, and surrounding areas." },
     ]
   }

@@ -4,6 +4,7 @@ import { blogs } from "./blogData";
 import BlogPost from "./BlogPost";
 import BlogSection from "../Home/BlogsSection";
 import MarqueeBanner from "../../components/MarqueeBanner";
+import FreeQuoteButton from "../../components/FreeQuoteButton";
 
 const BlogPage: React.FC = () => {
   const { slug } = useParams();
@@ -19,6 +20,8 @@ const BlogPage: React.FC = () => {
   return (
     <>
       <BlogPost {...blog} />
+      <FreeQuoteButton />
+      <div className="h-6"></div>
       <MarqueeBanner />
       <BlogSection />
     </>
