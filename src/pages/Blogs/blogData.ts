@@ -85,42 +85,8 @@ export const blogs = [
     date: "2025-04-23",
     content: [
       {
-        text: "Designing the perfect patio isn’t just about style—it’s also about choosing the right type of space you have. The ideal cover can make the difference between a barely usable patio and one that becomes your favorite spot. At **New Gen Patio**, we help you find the best solution based on your surroundings, lifestyle, and needs."
+        text: "Designing the perfect patio isn’t just about style it’s also about choosing the right type of space you have. The ideal cover can make the difference between a barely usable patio and one that becomes your favorite spot. At **New Gen Patio**, we help you find the best solution based on your surroundings, lifestyle, and needs."
       },
-  
-      { link: { to: "/freestanding-covered-patio-houston", label: "****1. Freestanding Pergola****" } },
-      { text: "✅ ***Best suited for:*** Spacious patios or garden areas detached from the house." },
-      { text: "● Independent from your home’s structure." },
-      { text: "● Creates a centralized space for gatherings, fire pits, or hot tubs." },
-      { text: "● Fully customizable in size, height, and finish." },
-      { text: "💡 **Perfect if you're looking for a focal point in your garden or want a dedicated entertainment space.**" },
-      
-      { link: { to: "/cantilever-cover-patio-houston", label: "****2. Cantilevered Pergola****" } },
-      { text: "✅ ***Best suited for:*** Spaces with restrictions on front posts or panoramic views." },
-      { text: "● Sleek design with no front columns." },
-      { text: "● Ideal for poolside setups or patios with scenic views." },
-      { text: "● Provides shade without blocking movement or the landscape." },
-      { text: "💡 *An elegant option for those seeking a visually light and functional structure.*" },
-
-      { link: { to: "/attached-covered-patio-houston", label: "****3. Attached Covered Patio****" } },
-      { text: "✅ ***Best suited for:*** Patios that connect directly to the house." },
-      { text: "● Seamlessly extends your living room into the outdoors." },
-      { text: "● Protects furniture and doors from sun or rain." },
-      { text: "● Can be integrated with lighting, fans, and power outlets." },
-      { text: "💡 **An ideal solution for those who enjoy outdoor dining or hosting without leaving the comfort of home.**" },
-  
-      { text: "****4. How to Choose the Ideal Cover for You****" },
-      { text: "The perfect patio cover depends on three key factors:" },
-      { text: "✅ The size and shape of your patio." },
-      { text: "✅ The functionality you expect (dining, lounge area, outdoor kitchen, etc.)." },
-      { text: "✅ Your architectural style and desired level of privacy." },
-
-      { link: { to: "/our-promise-patio-builders-houston", label: "****5. Why Choose New Gen Patio?****" } },
-      { text: "At **New Gen Patio**, we design **custom solutions** using high-quality materials like insulated, weather-resistant aluminum. Our team supports you from the design phase all the way through to final installation—ensuring your patio not only looks amazing but also lasts for life." },
-  
-      { text: "***Ready to transform your space?***" },
-      { text: "Request your **free consultation** today and receive your 3D design at no cost." },
-      { text: "📍 Cypress, Spring, Houston and surrounding areas." },
 
       { text: "****Best Patio Cover Types Based on Your Outdoor Space****" },
       { text: "Creating the perfect patio doesn’t just depend on aesthetics—it depends on choosing the right structure for your specific layout. The ideal cover can transform a simple space into a functional and enjoyable extension of your home. At **New Gen Patio**, tailored solutions are provided based on your environment, lifestyle, and design goals." },
