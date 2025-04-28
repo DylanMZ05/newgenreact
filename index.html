@@ -105,6 +105,98 @@
     <img src="https://tracker.metricool.com/c3po.jpg?hash=61915cfe2be2f81cb147a95d34086a6e"/>
     
     <div id="root"></div>
+
+    <!-- POPUP de Cookies -->
+    <div id="cookie-popup" style="
+      position: fixed; 
+      bottom: 0; 
+      left: 0; 
+      right: 0; 
+      background: black; 
+      padding: 20px; 
+      min-height: 150px; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      text-align: center; 
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2); 
+      z-index: 9999;
+      animation: slideUp 1s ease-out forwards;
+    ">
+      <p style="margin: 0 0 15px 0; font-size: 16px; font-weight: bold; color: white;">
+        We use cookies to enhance your experience. Do you accept?
+      </p>
+      <div style="display: flex; gap: 10px;">
+        <button id="accept-cookies" style="background-color: #ff6a00; color: white; font-weight: 600; padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer;">
+          Accept
+        </button>
+        <button id="reject-cookies" style="background: none; border: none; color: white; text-decoration: underline; font-weight: 500; cursor: pointer;">
+          Decline
+        </button>
+      </div>
+    </div>
+
+    <!-- Animación CSS -->
+    <style>
+    @keyframes slideUp {
+      0% {
+        transform: translateY(100%);
+        scale: 1;
+      }
+      100% {
+        transform: translateY(0);
+        scale: 1.1;
+      }
+    }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const popup = document.getElementById('cookie-popup');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+    
+        // Verificar si ya aceptó
+        if (localStorage.getItem('cookiesAccepted') === 'true') {
+          loadTrackingScripts();
+          popup.style.display = 'none';
+        }
+    
+        acceptBtn.addEventListener('click', () => {
+          localStorage.setItem('cookiesAccepted', 'true');
+          loadTrackingScripts();
+          popup.style.display = 'none';
+        });
+    
+        rejectBtn.addEventListener('click', () => {
+          localStorage.setItem('cookiesAccepted', 'false');
+          popup.style.display = 'none';
+        });
+    
+        function loadTrackingScripts() {
+          // Aca cargas el pixel solo si aceptaron
+          const script = document.createElement('script');
+          script.src = 'https://connect.facebook.net/en_US/fbevents.js'; // Ejemplo de Meta Pixel
+          script.async = true;
+          document.head.appendChild(script);
+    
+          // También podrías pegar el código estándar de tu Pixel acá
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+    
+          fbq('init', 'TU_ID_PIXEL'); 
+          fbq('track', 'PageView');
+        }
+      });
+    </script>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
