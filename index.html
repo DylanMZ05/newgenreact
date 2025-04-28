@@ -123,7 +123,23 @@
       box-shadow: 0 -2px 10px rgba(0,0,0,0.2); 
       z-index: 9999;
       animation: slideUp 0.6s ease-out forwards;
+      position: fixed;
     ">
+      <!-- Botón de cerrar (cruz) -->
+      <button id="close-cookies" style="
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+      ">
+        ✕
+      </button>
+
       <p style="margin: 0 0 15px 0; font-size: 16px; font-weight: bold; color: white;">
         This website uses cookies to enhance the user experience.
       </p>
@@ -146,19 +162,26 @@
     }
     </style>
 
-    <!-- Script para ocultar el popup -->
+    <!-- Script para manejar la lógica -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const popup = document.getElementById('cookie-popup');
         const acceptBtn = document.getElementById('accept-cookies');
+        const closeBtn = document.getElementById('close-cookies');
 
-        // Si ya aceptó antes, no mostrar
+        // Si ya aceptó/cerró antes, no mostrar
         if (localStorage.getItem('cookiesAccepted') === 'true') {
           popup.style.display = 'none';
         }
 
-        // Solo cerrar y guardar que aceptó
+        // Al aceptar
         acceptBtn.addEventListener('click', () => {
+          localStorage.setItem('cookiesAccepted', 'true');
+          popup.style.display = 'none';
+        });
+
+        // Al cerrar con la cruz
+        closeBtn.addEventListener('click', () => {
           localStorage.setItem('cookiesAccepted', 'true');
           popup.style.display = 'none';
         });
