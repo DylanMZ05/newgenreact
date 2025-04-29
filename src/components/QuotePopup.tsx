@@ -43,9 +43,11 @@ const QuotePopup: React.FC = () => {
         </button>
 
         {/* Ícono amigable */}
-        <div className='flex items-center justify-center mx-auto w-full mb-2'>
-          <MessageSquare size={55} className="text-orange-500 mx-1" />
-          <p className='font-semibold text-6xl text-orange-500 -mt-3'>?</p>
+        <div className="relative w-[55px] h-[55px] mx-auto mb-2">
+          <MessageSquare size={55} className="text-orange-500" />
+          <span className="absolute inset-0 flex items-center justify-center font-bold text-orange-500 text-2xl -mt-[10px] ml-[2px] pointer-events-none">
+            ?
+          </span>
         </div>
 
         <p className="text-lg font-semibold mb-4 text-black/90">
