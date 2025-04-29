@@ -50,6 +50,9 @@ import ContactRedirect from "./pages/Contact/ContactRedirect";
 import FreeQuoteTracking from "./pages/traking/freequote-tracking";
 import WhatsAppRedirect from "./pages/traking/WhatsAppRedirect";
 
+// Free Quote Popup
+import QuotePopup from "./components/QuotePopup";
+
 const sectionsData3 = [
   {
     id: 6,
@@ -173,6 +176,7 @@ const Layout = memo(() => {
         <Route path="/get-a-free-quote-houston-tracking" element={<FreeQuoteTracking />} />
         <Route path="/whatsapp-redirect" element={<WhatsAppRedirect />} />
       </Routes>
+      {!isNoLayout && <QuotePopup />}
       {!isNoLayout && <WspButton />}
       {!isNoLayout && <Footer />}
     </>
