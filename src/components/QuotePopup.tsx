@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { X, Gift, Sparkles } from 'lucide-react'; // Nuevo ícono
+import { X, MessageSquare } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
+import useScrollToTop from '../hooks/scrollToTop';
 
 const QuotePopup: React.FC = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [hasAppeared, setHasAppeared] = useState(false);
   const navigate = useNavigate();
+  const scrollToTop = useScrollToTop();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -13,7 +16,7 @@ const QuotePopup: React.FC = () => {
         setShowPopup(true);
         setHasAppeared(true);
       }
-    }, 300000); // 5 minutos
+    }, 30); // 5 minutos
 
     return () => clearTimeout(timer);
   }, [hasAppeared]);
@@ -22,7 +25,7 @@ const QuotePopup: React.FC = () => {
 
   const handleGetQuote = () => {
     setShowPopup(false);
-    navigate('/get-a-free-quote-houston');
+    navigate('/whatsapp-redirect');
   };
 
   if (!showPopup) return null;
@@ -40,20 +43,23 @@ const QuotePopup: React.FC = () => {
         </button>
 
         {/* Ícono amigable */}
-        <div className='flex items-center justify-center mx-auto w-full'>
-          <Sparkles size={24} className="text-orange-500" />
-          <Gift size={55} className="text-orange-500" />
-          <Sparkles size={24} className="text-orange-500" />
+        <div className='flex items-center justify-center mx-auto w-full mb-2'>
+          <MessageSquare size={55} className="text-orange-500 mx-1" />
+          <p className='font-semibold text-6xl text-orange-500 -mt-3'>?</p>
         </div>
 
         <p className="text-lg font-semibold mb-4 text-black/90">
-          Still undecided? Apply for a <span className='font-bold text-black'>Free Quote</span> now.
+        Still undecided? <span className="font-bold text-black">Contact our team</span> and clear up your doubts.
         </p>
         <button
-          onClick={handleGetQuote}
-          className="bg-orange-500 text-lg font-semibold text-white px-5 py-1 rounded-full hover:bg-orange-600 transition-all cursor-pointer"
+          onClick={() => {
+            handleGetQuote();
+            scrollToTop();
+          }}
+          className="flex items-center gap-2 mx-auto bg-green-500 text-lg font-semibold text-white px-3 py-1 rounded-full hover:bg-green-600 transition-all cursor-pointer"
         >
-          Get a Free Quote
+          <FaWhatsapp size={24} />
+          Contact Us
         </button>
       </div>
     </div>
