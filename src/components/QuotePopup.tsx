@@ -16,7 +16,7 @@ const QuotePopup: React.FC = () => {
         setShowPopup(true);
         setHasAppeared(true);
       }
-    }, 30); // 5 minutos
+    }, 300000); // 5 minutos
 
     return () => clearTimeout(timer);
   }, [hasAppeared]);
