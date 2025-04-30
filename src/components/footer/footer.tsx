@@ -54,36 +54,36 @@ const Footer: React.FC = () => {
 
       {/* Footer principal */}
       <footer id="contact" className="bg-[#0D4C5F] flex items-center justify-center w-full">
-        <section className="w-full max-w-[1400px] flex flex-col items-center justify-center py-10 md:px-10">
+        <section className="w-full max-w-[1400px] flex flex-col py-10 md:px-10 md:items-center md:justify-center">
           
           {/* Contact Section */}
-          <p className="text-white text-5xl font-semibold mb-4 text-center">
-            Get in Touch
+          <p className="text-white text-5xl font-semibold mb-4 text-center mx-8">
+            Do you have a <br />project in mind?
           </p>
 
-          <div className="md:w-full md:flex md:justify-between px-5 max-w-[1100px]">
-            {/* Contact Form */}
-            <div className="flex flex-col items-center justify-center text-center text-white p-6 w-full max-w-md mt-6 md:mt-10 md:h-100">
-              <div className="flex flex-col gap-5">
-                <p className="text-2xl font-bold md:text-3xl">
-                  CONTACT US NOW!
-                </p>
-                <p className="mt-2 text-xl text-white/80 md:text-2xl">
-                  Within your reach!
-                </p>
-                <Link
-                  to="/contact-us"
-                  className="w-40 bg-orange-500 text-white px-4 py-2 mt-4 rounded-full font-semibold hover:bg-orange-600 transition-all mx-auto"
-                  onClick={scrollToTop}
-                  aria-label="Go to contact form"
-                >
-                  CONTACT US
-                </Link>
-              </div>  
+          <div className="flex flex-col-reverse gap-4 mb-5 items-start md:w-full md:flex-row md:justify-between px-5 max-w-[1100px]">
+
+            {/* Company Info */}
+            <div className="flex flex-col text-white md:mt-8 md:max-w-[50%]">
+              <div className="max-w-[50%]">
+                <img
+                  src="assets/images/IdentidadSVG/LogoBlanco.svg"
+                  alt="New Gen Patio Logo"
+                  className="h-20 p-2 pl-0"
+                  width="65"
+                  height="80"
+                  loading="lazy"
+                />
+              </div>
+              <p className="font-semibold text-2xl mb-3">NEW GEN PATIO</p>
+              <p className="text-white/80]">
+              Transforming your outdoor spaces with expertly crafted patios and pergolas.
+              We specialize in creating stunning, functional outdoor areas that elevate your lifestyle and add lasting value to your home. With design, quality, and clear communication at the heart of every project, we ensure a seamless experience from concept to completion.
+              </p>
             </div>
 
             {/* Financing Card */}
-            <div className="flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-red-800 to-purple-800 text-center text-white p-6 rounded-lg shadow-lg w-full max-w-md mt-6 md:mt-10 md:h-100">
+            <div className="flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-red-800 to-purple-800 text-center text-white p-6 rounded-lg shadow-lg w-full mt-6 md:mt-10 md:h-100 md:max-w-md">
               <p className="text-2xl font-bold md:text-3xl">
                 FLEXIBLE FINANCING!
               </p>
@@ -104,27 +104,9 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="w-full px-5">
-            <img
-              src="assets/images/IdentidadSVG/LogoBlanco.svg"
-              alt="New Gen Patio Logo"
-              className="h-20 p-2 pl-0"
-              width="65"
-              height="80"
-              loading="lazy"
-            />
-          </div>
-
           {/* Footer Information */}
           <div className="text-white flex flex-col w-full max-w-[1920px] gap-8 md:flex-row md:justify-between px-5 mt-3">
-            {/* Company Info */}
-            <div className="flex flex-col">
-              <p className="font-semibold text-2xl mb-3">NEW GEN PATIO</p>
-              <p className="text-white/80">
-                Transforming your outdoor spaces with expertly crafted patios and pergolas.
-                <br /> Design, quality, and communication at the heart of every project.
-              </p>
-            </div>
+
 
             {/* Contact Info */}
             <div>
