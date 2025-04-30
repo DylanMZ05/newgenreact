@@ -188,7 +188,7 @@ const Footer: React.FC = () => {
         </div>
 
           {/* Navigation con Separadores "•" */}
-          <p className="text-white/90 text-xl font-semibold mt-2">Navigation</p>
+          <p className="text-white/90 text-xl font-semibold mt-2 text-center">Navigation</p>
           <div className="flex flex-wrap justify-center text-white text-sm mt-4 gap-2">
             {["services", "our-promise", "who-we-are", "blogs", "contact"].map((id, index, array) => {
               const routeMap: { [key: string]: string } = {
