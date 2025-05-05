@@ -39,7 +39,13 @@ const Clients: React.FC = () => {
         >
           {[...images, ...images].map((image, index) => (
             <div key={index} className="review-card">
-              <img src={image} alt={`Customer review ${index + 1}`} />
+              <img
+                src={image}
+                alt={`Customer review ${index + 1}`}
+                width={320}
+                height={260}
+                loading="lazy"
+              />
             </div>
           ))}
         </a>
