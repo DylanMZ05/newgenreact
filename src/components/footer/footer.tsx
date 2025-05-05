@@ -63,27 +63,29 @@ const Footer: React.FC = () => {
 
           <div className="flex flex-col-reverse gap-4 mb-5 items-start md:w-full md:flex-row md:justify-between px-5 max-w-[1100px]">
 
-            {/* Company Info */}
-            <div className="flex flex-col text-white md:mt-8 md:max-w-[50%]">
-              <div className="max-w-[50%]">
-                <img
-                  src="assets/images/IdentidadSVG/LogoBlanco.svg"
-                  alt="New Gen Patio Logo"
-                  className="h-20 p-2 pl-0"
-                  width="65"
-                  height="80"
-                  loading="lazy"
-                />
+              {/* Free Quote Card */}
+              <div className="flex flex-col items-center justify-center gap-3 bg-gradient-to-b md:bg-gradient-to-l from-red-800 to-purple-800 text-center text-white p-6 rounded-lg shadow-lg w-full mt-6 md:mt-10 md:h-100 md:max-w-md">
+                <p className="text-2xl font-bold md:text-3xl">
+                  GET A FREE QUOTE!
+                </p>
+                <p className="mt-2 text-xl text-white/80 md:text-2xl">
+                  No obligations. Just fast, accurate pricing for your project.
+                </p>
+                <p className="text-2xl font-bold md:text-3xl">
+                  Personalized & 100% Free!
+                </p>
+                <Link
+                  to="/get-a-free-quote-houston"
+                  className="bg-orange-500 text-white px-4 py-2 mt-4 rounded-full font-semibold hover:bg-orange-600 transition-all"
+                  onClick={scrollToTop}
+                  aria-label="Check financing options"
+                >
+                  REQUEST NOW!
+                </Link>
               </div>
-              <p className="font-semibold text-2xl mb-3">NEW GEN PATIO</p>
-              <p className="text-white/80]">
-              Transforming your outdoor spaces with expertly crafted patios and pergolas.
-              We specialize in creating stunning, functional outdoor areas that elevate your lifestyle and add lasting value to your home. With design, quality, and clear communication at the heart of every project, we ensure a seamless experience from concept to completion.
-              </p>
-            </div>
 
             {/* Financing Card */}
-            <div className="flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-red-800 to-purple-800 text-center text-white p-6 rounded-lg shadow-lg w-full mt-6 md:mt-10 md:h-100 md:max-w-md">
+            <div className="flex flex-col items-center justify-center gap-3 bg-gradient-to-t md:bg-gradient-to-r from-red-800 to-purple-800 text-center text-white p-6 rounded-lg shadow-lg w-full mt-6 md:mt-10 md:h-100 md:max-w-md">
               <p className="text-2xl font-bold md:text-3xl">
                 FLEXIBLE FINANCING!
               </p>
@@ -104,9 +106,28 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
+
           {/* Footer Information */}
+          <div className="w-full px-5">
+            <img
+              src="assets/images/IdentidadSVG/LogoBlanco.svg"
+              alt="New Gen Patio Logo"
+              className="h-20 p-2 pl-0"
+              width="65"
+              height="80"
+              loading="lazy"
+              />
+          </div>
           <div className="text-white flex flex-col w-full max-w-[1920px] gap-8 md:flex-row md:justify-between px-5 mt-3">
 
+            {/* Company Info */}
+            <div className="flex flex-col text-white md:max-w-[50%]">
+              <p className="font-semibold text-2xl mb-3">NEW GEN PATIO</p>
+              <p className="text-white/80]">
+              Transforming your outdoor spaces with expertly crafted patios and pergolas.
+              We specialize in creating stunning, functional outdoor areas that elevate your lifestyle and add lasting value to your home. With design, quality, and clear communication at the heart of every project, we ensure a seamless experience from concept to completion.
+              </p>
+            </div>
 
             {/* Contact Info */}
             <div>
