@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaInstagram, FaTiktok, FaPhoneAlt, FaEnvelope, FaPinterest, FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useScrollToTop from "../../hooks/scrollToTop";
+import ContractorCard from "../ContractorCard";
 
 const Footer: React.FC = () => {
   const scrollToTop = useScrollToTop();
@@ -64,26 +65,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col-reverse gap-4 mb-5 items-start md:w-full md:flex-row md:justify-between px-5 max-w-[1100px]">
 
             {/* Contractor Call-To-Action Card */}
-            <div className="flex flex-col items-center justify-center gap-3 bg-gradient-to-b md:bg-gradient-to-l from-red-800 to-purple-800 text-center text-white p-6 rounded-lg shadow-lg w-full mt-6 md:mt-10 md:h-100 md:max-w-md">
-              <p className="text-2xl font-bold md:text-3xl">
-                ARE YOU A CONTRACTOR?
-              </p>
-              <p className="mt-2 text-xl text-white/80 md:text-2xl">
-                We’re always looking to expand our team with skilled, reliable professionals.
-              </p>
-              <p className="text-2xl font-bold md:text-3xl">
-                Let’s build something great together!
-              </p>
-              <a
-                href="https://wa.me/13465819082?text=Hi!%20I'm%20a%20contractor%20and%20would%20love%20to%20work%20with%20your%20team!"
-                className="bg-orange-500 text-white px-4 py-2 mt-4 rounded-full font-semibold hover:bg-orange-600 transition-all"
-                aria-label="Write us now on WhatsApp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WRITE US NOW!
-              </a>
-            </div>
+            <ContractorCard />
 
             {/* Financing Card */}
             <div className="flex flex-col items-center justify-center gap-3 bg-gradient-to-t md:bg-gradient-to-r from-red-800 to-purple-800 text-center text-white p-6 rounded-lg shadow-lg w-full mt-6 md:mt-10 md:h-100 md:max-w-md">
