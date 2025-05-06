@@ -51,7 +51,7 @@ const ContractorCard: React.FC = () => {
         </p>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="bg-orange-500 text-white px-4 py-2 mt-4 rounded-full font-semibold hover:bg-orange-600 transition-all"
+          className="bg-orange-500 text-white px-4 py-2 mt-4 rounded-full font-semibold hover:bg-orange-600 transition-all cursor-pointer"
         >
           WRITE US NOW!
         </button>
