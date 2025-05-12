@@ -4,6 +4,7 @@ const ContractorCard: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
 
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -12,6 +13,17 @@ const ContractorCard: React.FC = () => {
     const encodedMsg = encodeURIComponent(msg);
     const phoneNumber = "13465819082";
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMsg}`, "_blank");
+
+    // Guardar en backend (Excel)
+    fetch("https://script.google.com/macros/s/AKfycbxauP9A4_daeZUAsdGo1tWHIlWgnops_2uoZL0mJbCovO4OEoKmZCkhJFUqvRc-cels3Q/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, company, email }),
+    })
+      .then(res => res.json())
+      .then(data => console.log("Guardado en Google Sheets", data))
+      .catch(err => console.error("Error al guardar en Sheets", err));
+
     closeModal();
   };
 
@@ -19,9 +31,9 @@ const ContractorCard: React.FC = () => {
     setIsModalOpen(false);
     setName("");
     setCompany("");
+    setEmail("");
   };
 
-  // Close modal on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
@@ -94,6 +106,14 @@ const ContractorCard: React.FC = () => {
               value={company}
               onChange={(e) => setCompany(e.target.value)}
             />
+            <label className="block mb-2">Your Email</label>
+            <input
+              type="email"
+              className="w-full p-2 border rounded mb-4"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <div className="flex justify-between">
               <button
                 className="bg-gray-300 px-4 py-2 rounded cursor-pointer"
@@ -104,7 +124,7 @@ const ContractorCard: React.FC = () => {
               <button
                 className="bg-green-600 text-white px-4 py-2 rounded cursor-pointer"
                 onClick={handleSend}
-                disabled={!name || !company}
+                disabled={!name || !company || !email}
               >
                 Send to WhatsApp
               </button>
