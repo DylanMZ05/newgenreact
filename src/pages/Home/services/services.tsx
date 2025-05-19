@@ -9,8 +9,27 @@ const coveredPatios = [
 ];
 
 const extraServices = [
-  { title: "Outdoor Kitchen", imageUrl: "assets/images/Products/OutdoorKitchen/Modern/01.webp", link: "/outdoor-kitchens-houston" },
-  { title: "Concrete & Turf", imageUrl: "assets/images/Products/AdditionalServices/1.webp", link: "/concrete-and-turf-installation-houston" },
+  {
+    title: "Outdoor Kitchen",
+    imageUrl: "assets/images/Products/OutdoorKitchen/Modern/01.webp",
+    options: [
+      {
+        title: "Modern Style",
+        imageUrl: "assets/images/Products/OutdoorKitchen/Modern/01.webp",
+        link: "/outdoor-kitchens-modern-houston"
+      },
+      {
+        title: "Rustic Style",
+        imageUrl: "assets/images/Products/OutdoorKitchen/Rustic/01.webp",
+        link: "/outdoor-kitchens-rustic-houston"
+      }
+    ]
+  },
+  {
+    title: "Concrete & Turf",
+    imageUrl: "assets/images/Products/AdditionalServices/1.webp",
+    link: "/concrete-and-turf-installation-houston"
+  }
 ];
 
 interface ServicesProps {
