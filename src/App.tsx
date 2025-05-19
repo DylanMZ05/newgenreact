@@ -24,6 +24,8 @@ import Freestanding from "./pages/Services/Freestanding";
 import Cantilever from "./pages/Services/Cantilever";
 import OutdoorKitchen from "./pages/Services/OutdoorKitchen";
 import ConcreteTurf from "./pages/Services/ConcreteTurf";
+import OutdoorKitchenModern from "./pages/Services/OutdoorKitchenModern";
+import OutdoorKitchenTraditional from "./pages/Services/OutdoorKitchenTraditional";
 
 // Calculator
 import Calculator from "./pages/Calculator/Calculator";
@@ -164,6 +166,8 @@ const Layout = memo(() => {
         <Route path="/freestanding-covered-patio-houston" element={<Freestanding />} />
         <Route path="/cantilever-cover-patio-houston" element={<Cantilever />} />
         <Route path="/outdoor-kitchens-houston" element={<OutdoorKitchen />} />
+        <Route path="/outdoor-kitchens-modern-houston" element={<OutdoorKitchenModern />} />
+        <Route path="/outdoor-kitchens-traditional-houston" element={<OutdoorKitchenTraditional />} />
         <Route path="/concrete-and-turf-installation-houston" element={<ConcreteTurf />} />
         <Route path="/patio-financing-houston" element={<Calculator />} />
         <Route path="/financing-options" element={<FinancingOptions />} />

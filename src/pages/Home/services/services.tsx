@@ -15,13 +15,13 @@ const extraServices = [
     options: [
       {
         title: "Modern Style",
-        imageUrl: "assets/images/Products/OutdoorKitchen/Modern/01.webp",
+        imageUrl: "assets/images/Products/OutdoorKitchen/Modern/02.webp",
         link: "/outdoor-kitchens-modern-houston"
       },
       {
-        title: "Rustic Style",
-        imageUrl: "assets/images/Products/OutdoorKitchen/Rustic/01.webp",
-        link: "/outdoor-kitchens-rustic-houston"
+        title: "Traditional Style",
+        imageUrl: "assets/images/Products/OutdoorKitchen/Traditional/04.webp",
+        link: "/outdoor-kitchens-traditional-houston"
       }
     ]
   },
