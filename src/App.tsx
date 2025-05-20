@@ -166,8 +166,8 @@ const Layout = memo(() => {
         <Route path="/freestanding-covered-patio-houston" element={<Freestanding />} />
         <Route path="/cantilever-cover-patio-houston" element={<Cantilever />} />
         <Route path="/outdoor-kitchens-houston" element={<OutdoorKitchen />} />
-        <Route path="/outdoor-kitchens-modern-houston" element={<OutdoorKitchenModern />} />
-        <Route path="/outdoor-kitchens-traditional-houston" element={<OutdoorKitchenTraditional />} />
+        <Route path="/modern-outdoor-kitchens-houston" element={<OutdoorKitchenModern />} />
+        <Route path="/traditional-outdoor-kitchens-houston" element={<OutdoorKitchenTraditional />} />
         <Route path="/concrete-and-turf-installation-houston" element={<ConcreteTurf />} />
         <Route path="/patio-financing-houston" element={<Calculator />} />
         <Route path="/financing-options" element={<FinancingOptions />} />
