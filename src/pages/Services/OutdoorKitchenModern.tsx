@@ -77,13 +77,13 @@ const OutdoorKitchenModern: React.FC = () => {
           {
             title: "Architectural Integration that Enhances Contemporary Aesthetics:",
             text: "The design of straight lines, smooth finishes, and neutral colors harmonizes with current homes. Visual coherence between the interior and exterior is achieved, adding sophistication and increasing property value.",
-            imageUrl: "assets/images/Products/OutdoorKitchen/Traditional/03.webp",
+            imageUrl: "assets/images/Products/OutdoorKitchen/Modern/03.webp",
             imagePosition: "right" as const,
           },
           {
             title: "Optimized Functionality for Efficient and Safe Use:",
             text: "Modules allow for the precise integration of stainless steel appliances (304 grade), which are resistant and easy to clean. This is complemented by LED lighting and professional ventilation options for comfortable and safe use at any time.",
-            imageUrl: "assets/images/Products/OutdoorKitchen/Traditional/06.webp",
+            imageUrl: "assets/images/Products/OutdoorKitchen/Modern/08.webp",
             imagePosition: "left" as const,
           },
         ].map((section, index) => (
