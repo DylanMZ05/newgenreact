@@ -19,20 +19,12 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({ title, imageUrl, link, options }) => {
   const navigate = useNavigate();
   const scrollToTop = useScrollToTop();
-  const [showOptions, setShowOptions] = React.useState(false);
+  const [showSplitView, setShowSplitView] = React.useState(false);
   const cardRef = React.useRef<HTMLDivElement>(null);
 
   const handleMainClick = () => {
-    if (options) {
-      setShowOptions((prev) => !prev);
-
-      // Scroll al centro luego de mostrar
-      setTimeout(() => {
-        cardRef.current?.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
-      }, 100);
+    if (options && options.length === 2) {
+      setShowSplitView((prev) => !prev);
     } else if (link) {
       navigate(link);
       scrollToTop();
@@ -44,30 +36,31 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, link, options }) => {
     scrollToTop();
   };
 
-  // Cierre del dropdown al hacer clic fuera
+  // Cierre al hacer clic fuera
   React.useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
-        setShowOptions(false);
+        setShowSplitView(false);
       }
     };
 
-    if (showOptions) {
+    if (showSplitView) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [showOptions]);
+  }, [showSplitView]);
 
   return (
     <article
       ref={cardRef}
       onClick={handleMainClick}
-      className="card-container relative w-[90vw] md:w-80 rounded-lg shadow-md overflow-visible cursor-pointer"
+      className="card-container relative w-[90vw] md:w-80 rounded-lg shadow-md overflow-hidden cursor-pointer"
       aria-label={`Go to ${title} service`}
     >
+      {/* Imagen de fondo */}
       <figure className="w-full h-64 overflow-hidden rounded-lg relative">
         <img
           src={imageUrl}
@@ -85,34 +78,36 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, link, options }) => {
         </motion.figcaption>
       </figure>
 
-      {/* Dropdown de opciones animado */}
+      {/* Capa animada que se muestra encima */}
       <AnimatePresence>
-        {options && showOptions && (
+        {showSplitView && options && options.length === 2 && (
           <motion.div
-            key="dropdown"
-            initial={{ opacity: 0, y: -10 }}
+            key="splitView"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: 30 }}
             transition={{ duration: 0.3 }}
-            className="absolute left-0 top-full z-20 mt-2 bg-white grid grid-cols-2 gap-2 w-full"
+            className="absolute inset-0 grid grid-rows-2 z-30"
           >
             {options.map((opt, i) => (
               <div
                 key={i}
-                className="cursor-pointer border rounded-md overflow-hidden shadow hover:shadow-md transition-all hover:scale-103"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleOptionClick(opt.link);
                 }}
+                className="relative group overflow-hidden"
               >
                 <img
                   src={opt.imageUrl}
                   alt={opt.title}
-                  className="w-full h-24 object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <p className="text-center text-sm font-semibold p-2 bg-white">
-                  {opt.title}
-                </p>
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <p className="text-white text-2xl font-bold text-center px-2">
+                    {opt.title}
+                  </p>
+                </div>
               </div>
             ))}
           </motion.div>
