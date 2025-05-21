@@ -48,7 +48,7 @@ import SectionBlock from "./components/SectionBlock";
 import FormPage from "./pages/Contact/FormPage";
 import ContactRedirect from "./pages/Contact/ContactRedirect";
 
-// Traking
+// Tracking
 import FreeQuoteTracking from "./pages/traking/freequote-tracking";
 import WhatsAppRedirect from "./pages/traking/WhatsAppRedirect";
 
@@ -97,12 +97,38 @@ const sections = [
   },
 ];
 
-// **Layout sin Header y Footer**
 const Layout = memo(() => {
   const location = useLocation();
-  const noLayoutRoutes = useMemo(() => ["/financing-options","/get-a-free-quote-houston-tracking"], []);
 
+  const layoutRoutes = useMemo(() => [
+    "/", "/custom-aluminium-pergola-and-over-patio-houston",
+    "/our-promise-patio-builders-houston", "/howwedoit_patiobuildershouston", "/about-us",
+    "/blog", "/blogs/blog/:slug", "/blog/:slug",
+    "/attached-covered-patio-houston", "/freestanding-covered-patio-houston",
+    "/cantilever-cover-patio-houston", "/outdoor-kitchens-houston",
+    "/modern-outdoor-kitchens-houston", "/traditional-outdoor-kitchens-houston",
+    "/concrete-and-turf-installation-houston", "/patio-financing-houston",
+    "/get-a-free-quote-houston", "/contact-us", "/formpage"
+  ], []);
+
+  const noLayoutRoutes = useMemo(() => ["/financing-options", "/get-a-free-quote-houston-tracking", "/whatsapp-redirect"], []);
+  const isLayoutRoute = layoutRoutes.includes(location.pathname);
   const isNoLayout = noLayoutRoutes.includes(location.pathname);
+
+  if (!isLayoutRoute && !isNoLayout) {
+    return (
+      <div className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-20 bg-white">
+        <h1 className="text-5xl font-bold mb-4 text-[#1a214a]">404 - Page Not Found</h1>
+        <p className="mb-6 text-lg text-gray-700">The page you are looking for doesn't exist or has been moved.</p>
+        <a
+          href="/"
+          className="px-6 py-3 bg-[#1a214a] text-white rounded-lg shadow hover:bg-[#2a2f6a] transition duration-300 cursor-pointer"
+        >
+          Go back to homepage
+        </a>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -115,7 +141,7 @@ const Layout = memo(() => {
               <Main />
               <MarqueeBanner />
               <Services />
-              <hr className="text-black/20"/>
+              <hr className="text-black/20" />
               <HowWeDoItHome />
               <OurProcessHome />
               <Clients />
@@ -126,42 +152,22 @@ const Layout = memo(() => {
           }
         />
         <Route path="/custom-aluminium-pergola-and-over-patio-houston" element={
-          <>
-            <main className="flex flex-col justify-center items-center mb-10">
-              <BlockSection />
-              <SectionBlock sections={sectionsData3} />
-              <MarqueeBanner />
-              {sections.map((section, index) => (
-                <ImageTextSection key={index} {...section} />
-              ))}
-              <Services />
-            </main>
-          </>
-          } />
-        <Route path="/our-promise-patio-builders-houston" element={
-          <>
+          <main className="flex flex-col justify-center items-center mb-10">
             <BlockSection />
-            <OurPromise />
-          </>
-          } />
-        <Route path="/howwedoit_patiobuildershouston" element={
-          <>
-            <BlockSection />
-            <OurProcess />
-          </>
-          } />
-        <Route path="/about-us" element={
-          <>
-            <BlockSection />
-            <AboutUsPage />
-          </>
+            <SectionBlock sections={sectionsData3} />
+            <MarqueeBanner />
+            {sections.map((section, index) => (
+              <ImageTextSection key={index} {...section} />
+            ))}
+            <Services />
+          </main>
         } />
-        <Route path="/blog" element={
-          <>
-            <BlockSection />
-            <BlogSectionPage />
-          </>
-          } />
+        <Route path="/our-promise-patio-builders-houston" element={<><BlockSection /><OurPromise /></>} />
+        <Route path="/howwedoit_patiobuildershouston" element={<><BlockSection /><OurProcess /></>} />
+        <Route path="/about-us" element={<><BlockSection /><AboutUsPage /></>} />
+        <Route path="/blog" element={<><BlockSection /><BlogSectionPage /></>} />
+        <Route path="/blogs/blog/:slug" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPage />} />
         <Route path="/attached-covered-patio-houston" element={<Attached />} />
         <Route path="/freestanding-covered-patio-houston" element={<Freestanding />} />
         <Route path="/cantilever-cover-patio-houston" element={<Cantilever />} />
@@ -171,12 +177,9 @@ const Layout = memo(() => {
         <Route path="/concrete-and-turf-installation-houston" element={<ConcreteTurf />} />
         <Route path="/patio-financing-houston" element={<Calculator />} />
         <Route path="/financing-options" element={<FinancingOptions />} />
-        <Route path="/blogs/blog/:slug" element={<BlogPage />} />
-        <Route path="/blog/:slug" element={<BlogPage />} />
         <Route path="/get-a-free-quote-houston" element={<FreeQuote />} />
         <Route path="/contact-us" element={<ContactRedirect />} />
         <Route path="/formpage" element={<FormPage />} />
-
         <Route path="/get-a-free-quote-houston-tracking" element={<FreeQuoteTracking />} />
         <Route path="/whatsapp-redirect" element={<WhatsAppRedirect />} />
       </Routes>
