@@ -101,14 +101,15 @@ const Layout = memo(() => {
   const location = useLocation();
 
   const layoutRoutes = useMemo(() => [
-    "/", "/custom-aluminium-pergola-and-over-patio-houston",
+    "/", "/custom-aluminium-pergola-and-cover-patio-houston",
     "/our-promise-patio-builders-houston", "/howwedoit_patiobuildershouston", "/about-us",
     "/blog", "/blogs/blog/:slug", "/blog/:slug",
     "/attached-covered-patio-houston", "/freestanding-covered-patio-houston",
     "/cantilever-cover-patio-houston", "/outdoor-kitchens-houston",
     "/modern-outdoor-kitchens-houston", "/traditional-outdoor-kitchens-houston",
     "/concrete-and-turf-installation-houston", "/patio-financing-houston",
-    "/get-a-free-quote-houston", "/contact-us", "/formpage"
+    "/get-a-free-quote-houston", "/contact-us", "/formpage", "/blog/best-patio-cover-types",
+    "/blog/aluminum-vs-wood-pergolas"
   ], []);
 
   const noLayoutRoutes = useMemo(() => ["/financing-options", "/get-a-free-quote-houston-tracking", "/whatsapp-redirect"], []);
@@ -151,7 +152,7 @@ const Layout = memo(() => {
             </main>
           }
         />
-        <Route path="/custom-aluminium-pergola-and-over-patio-houston" element={
+        <Route path="/custom-aluminium-pergola-and-cover-patio-houston" element={
           <main className="flex flex-col justify-center items-center mb-10">
             <BlockSection />
             <SectionBlock sections={sectionsData3} />
