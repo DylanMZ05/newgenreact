@@ -12,7 +12,7 @@ const FreeQuoteButton = () => {
         <div className="flex justify-center">
           <Link
             to="/get-a-free-quote-houston"
-            className="bg-orange-500 text-white text-lg font-semibold px-4 py-1 rounded-full mt-4 mb-2 inline-block 
+            className="bg-orange-500 border border-white/10 text-white text-lg font-semibold px-4 py-1 rounded-full mt-4 mb-2 inline-block 
             transition-all hover:bg-orange-600 hover:scale-102"
             onClick={handleScrollToTop}
           >

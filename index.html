@@ -125,11 +125,21 @@
 
     <!-- Theme Color for Mobile Browsers -->
     <meta name="theme-color" content="#ffffff" />
+
+    <!-- Preload del CSS principal generado por Vite -->
+    <link rel="preload" href="/assets/index-xxxxx.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/index-xxxxx.css"></noscript>
   </head>
   <body>
     <!-- Pixel Metricool -->
-    <img src="https://tracker.metricool.com/c3po.jpg?hash=61915cfe2be2f81cb147a95d34086a6e"/>
-    
+    <img 
+      src="https://tracker.metricool.com/c3po.jpg?hash=61915cfe2be2f81cb147a95d34086a6e" 
+      width="1" 
+      height="1" 
+      style="display: none;" 
+      alt="Pixel Metricool"
+    />
+
     <div id="root"></div>
 
     <!-- POPUP de Cookies -->

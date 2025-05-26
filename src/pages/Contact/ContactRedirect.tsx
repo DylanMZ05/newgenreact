@@ -41,7 +41,7 @@ const ContactRedirect = () => {
             Contact New Gen Patio – Request a FREE Consultation Today
           </h1>
           <div
-                    className="bg-orange-500 h-1 w-50 rounded-full mx-auto mb-4"
+                    className="bg-orange-500 border border-white/10 h-1 w-50 rounded-full mx-auto mb-4"
                     aria-hidden="true"
           />
 

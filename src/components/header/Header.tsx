@@ -165,8 +165,10 @@ const Header: React.FC = () => {
             }}
           >
             <img
-              src={`/assets/images/IdentidadSVG/LogoBlanco.svg`}
+              src="/assets/images/IdentidadSVG/LogoBlanco.svg"
               alt="New Gen Patio Logo"
+              width="200"
+              height="80"
               className="h-20 img-shadow p-2"
               loading="lazy"
             />

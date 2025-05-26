@@ -27,7 +27,7 @@ const HowWeDoItHome: React.FC = () => {
 
       <Link
         to="/howwedoit_patiobuildershouston"
-        className="bg-orange-500 text-white text-lg font-semibold px-6 py-2 rounded-full mt-6 inline-block 
+        className="bg-orange-500 border border-white/10 text-white text-lg font-semibold px-6 py-2 rounded-full mt-6 inline-block 
           transition-all hover:bg-orange-600 hover:scale-105 focus:ring-2 focus:ring-orange-500 focus:outline-none"
         onClick={handleScrollToTop}
         aria-label="Learn more about how we build high-quality patios and pergolas"

@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
         <div className="flex justify-center mt-5">
           <button
             onClick={() => setIsMapOpen(!isMapOpen)}
-            className="bg-orange-500 text-white px-4 py-2 font-semibold rounded-full shadow-md hover:bg-orange-600 transition-transform duration-300 hover:scale-105 cursor-pointer mb-5"
+            className="bg-orange-500 border border-white/10 text-white px-4 py-2 font-semibold rounded-full shadow-md hover:bg-orange-600 transition-transform duration-300 hover:scale-105 cursor-pointer mb-5"
             aria-expanded={isMapOpen}
             aria-controls="project-map"
             aria-label={isMapOpen ? "📍 CLOSE MAP" : "📍 VIEW MAP"}
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
               </p>
               <Link
                 to="/patio-financing-houston"
-                className="bg-orange-500 text-white px-4 py-2 mt-4 rounded-full font-semibold hover:bg-orange-600 transition-all"
+                className="bg-orange-500 border border-white/10 text-white px-4 py-2 mt-4 rounded-full font-semibold hover:bg-orange-600 transition-all"
                 onClick={scrollToTop}
                 aria-label="Check financing options"
               >

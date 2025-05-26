@@ -29,7 +29,7 @@ const Calculator: React.FC = () => {
             Affordable Patio Financing Options in Houston
           </h1>
           <div
-            className="bg-orange-500 h-1 w-50 rounded-full mx-auto mb-6"
+            className="bg-orange-500 border border-white/10 h-1 w-50 rounded-full mx-auto mb-6"
             aria-hidden="true"
           />
         </div>
@@ -101,7 +101,7 @@ const Calculator: React.FC = () => {
 
           <Link
             to="/financing-options"
-            className="mt-5 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-full transition-colors focus:outline-2 focus:outline-orange-300"
+            className="mt-5 bg-orange-500 border border-white/10 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-full transition-colors focus:outline-2 focus:outline-orange-300"
           >
             SEE YOUR PERSONALIZED OFFERS
           </Link>

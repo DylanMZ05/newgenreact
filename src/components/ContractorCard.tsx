@@ -12,7 +12,7 @@ const ContractorCard: React.FC = () => {
       <p className="text-xl font-bold">If you have a project at hand, you need help, and you want to delegate that outdoor space to professionals.</p>
       <button
         onClick={redirectToForm}
-        className="bg-orange-500 text-white px-4 py-2 mt-4 rounded-full font-semibold hover:bg-orange-600 transition-all"
+        className="bg-orange-500 border border-white/10 text-white px-4 py-2 mt-4 rounded-full font-semibold hover:bg-orange-600 transition-all cursor-pointer"
       >
         WRITE US NOW!
       </button>

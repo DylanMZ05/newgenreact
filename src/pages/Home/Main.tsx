@@ -27,7 +27,7 @@ const Main: React.FC = () => {
         preload="auto"
         title="Custom Aluminium Pergolas in Houston - Background Video"
       >
-        <source src="assets/videos/homevideo.webm" type="video/webm" />
+        <source src="assets/videos/homevideo.webm" type="video/webm" onError={(e) => e.currentTarget.remove()} />
         <track kind="captions" src="assets/videos/homevideo.vtt" srcLang="en" label="English" default={true} />
         Tu navegador no soporta videos.
       </video>
@@ -45,7 +45,7 @@ const Main: React.FC = () => {
             Custom Aluminum Pergolas in Houston
           </h1>
 
-          <div className="w-[45vw] md:w-80 h-[3px] bg-orange-500 mt-4 mb-1 ml-1 rounded-full"></div>
+          <div className="w-[45vw] md:w-80 h-[3px] bg-orange-700 mt-4 mb-1 ml-1 rounded-full"></div>
 
           <h2 className="text-2xl md:text-4xl font-semibold">
             Modern & Durable Pergolas and Covered Patio for Texas Homes
@@ -53,7 +53,7 @@ const Main: React.FC = () => {
 
           <Link
             to="/get-a-free-quote-houston"
-            className="bg-orange-500 text-white text-lg font-semibold px-4 py-1 rounded-full mt-4 mb-2 inline-block transition-all hover:bg-orange-600 hover:scale-102"
+            className="bg-orange-500 border border-white/10 text-white text-lg font-semibold px-4 py-1 rounded-full mt-4 mb-2 inline-block transition-all hover:bg-orange-600 hover:scale-102"
             onClick={handleScrollToTop}
           >
             Get a Free Quote
