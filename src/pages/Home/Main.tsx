@@ -24,11 +24,10 @@ const Main: React.FC = () => {
         loop
         muted
         playsInline
-        preload="auto"
-        title="Custom Aluminium Pergolas in Houston - Background Video"
+        preload="none"
+        poster="/assets/videos/homevideo-poster.jpg"
       >
-        <source src="assets/videos/homevideo.webm" type="video/webm" onError={(e) => e.currentTarget.remove()} />
-        <track kind="captions" src="assets/videos/homevideo.vtt" srcLang="en" label="English" default={true} />
+        <source src="/assets/videos/homevideo.webm" type="video/webm" onError={(e) => e.currentTarget.remove()} />
         Tu navegador no soporta videos.
       </video>
 

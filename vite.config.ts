@@ -7,4 +7,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   base: "/",
   plugins: [react(), tailwindcss(), visualizer()],
+  build: {
+    sourcemap: true,
+  },
 });
