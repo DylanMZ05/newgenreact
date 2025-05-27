@@ -10,21 +10,21 @@ const BlogsSectionPage: React.FC = () => {
 
   const maxSubtitleLength = 100;
   const baseUrl = import.meta.env.BASE_URL || "/";
-  const defaultImage = "/assets/images/default-placeholder.webp"; // Imagen de respaldo
+  const defaultImage = "/assets/images/default-placeholder.webp";
 
   return (
     <>
       <section className="pt-16 pb-10 px-6 bg-gray-200 border-t border-black/10">
         <div className="max-w-6xl mx-auto">
-          <header className="text-center">
+          <header className="text-center mb-10">
             <h2 className="text-2xl font-semibold text-[#0d4754]">Our Blog</h2>
             <p className="text-4xl font-semibold text-black">
               Latest Insights & Outdoor Living Ideas
             </p>
-            <div className="w-24 h-1 bg-[#0d4754] mt-4 mb-6 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-[#0d4754] mt-4 mx-auto rounded-full"></div>
           </header>
 
-          {/* Grid con ajuste para blogs impares */}
+          {/* Grid responsive con ajuste visual */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {blogs.map((blog) => {
               const formattedDate = new Date(blog.date).toLocaleDateString("en-US", {
@@ -40,11 +40,15 @@ const BlogsSectionPage: React.FC = () => {
               return (
                 <article
                   key={blog.slug}
-                  className="bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-[1.02] cursor-pointer"
+                  className="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02] cursor-pointer"
                   aria-labelledby={`blog-title-${blog.slug}`}
                 >
-                  <Link to={`/blog/${blog.slug}`} onClick={handleScrollToTop} className="block">
-                    <figure className="w-full h-64">
+                  <Link
+                    to={`/blog/${blog.slug}`}
+                    onClick={handleScrollToTop}
+                    className="block h-full"
+                  >
+                    <figure className="w-full h-64 overflow-hidden">
                       <img
                         src={resolvedImageUrl}
                         alt={blog.title}
@@ -54,8 +58,11 @@ const BlogsSectionPage: React.FC = () => {
                       />
                       <figcaption className="sr-only">{blog.title}</figcaption>
                     </figure>
-                    <div className="p-5">
-                      <h3 id={`blog-title-${blog.slug}`} className="text-xl font-semibold text-gray-800">
+                    <div className="p-5 flex flex-col justify-between h-[180px]">
+                      <h3
+                        id={`blog-title-${blog.slug}`}
+                        className="text-xl font-semibold text-gray-800"
+                      >
                         {blog.title}
                       </h3>
                       <p className="text-gray-600 mt-2 text-sm">
@@ -64,7 +71,7 @@ const BlogsSectionPage: React.FC = () => {
                           : blog.subtitle}
                       </p>
                       <div className="flex justify-between items-center mt-3">
-                        <span className="text-gray-500 text-sm text-right">{formattedDate}</span>
+                        <span className="text-gray-500 text-sm">{formattedDate}</span>
                       </div>
                     </div>
                   </Link>
@@ -73,8 +80,12 @@ const BlogsSectionPage: React.FC = () => {
             })}
           </div>
         </div>
-        <FreeQuoteButton />
+
+        <div className="mt-10">
+          <FreeQuoteButton />
+        </div>
       </section>
+
       <MarqueeBanner />
     </>
   );

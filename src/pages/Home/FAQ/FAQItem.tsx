@@ -5,8 +5,12 @@ interface FAQItemProps {
   answer: React.ReactNode;
 }
 
+const slugify = (text: string) =>
+  text.toLowerCase().replace(/[^\w]+/g, "-");
+
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const id = slugify(question);
 
   return (
     <article className="w-full max-w-2xl border-b border-gray-300 py-4">
@@ -16,28 +20,31 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
           isOpen ? "rounded-t-xl" : "rounded-xl"
         }`}
         aria-expanded={isOpen}
-        aria-controls={`faq-answer-${question}`}
+        aria-controls={`faq-answer-${id}`}
+        id={`faq-question-${id}`}
       >
         {question}
         <span
           className={`text-2xl transition-transform duration-300 ${
             isOpen ? "rotate-180" : "rotate-0"
           }`}
+          aria-hidden="true"
         >
           ▲
         </span>
       </button>
 
       <div
-        id={`faq-answer-${question}`}
+        id={`faq-answer-${id}`}
+        role="region"
+        aria-labelledby={`faq-question-${id}`}
         className={`transition-all duration-300 ease-in-out overflow-hidden ${
-          isOpen ? "max-h-screen opacity-100 " : "max-h-0 opacity-0"
+          isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
         }`}
-        aria-hidden={!isOpen}
       >
-        <p className="text-black/80 bg-gray-100/50 border-2 border-t-0 border-black/10 rounded-b-xl p-2 whitespace-pre-line">
+        <div className="text-black/80 bg-gray-100/50 border-2 border-t-0 border-black/10 rounded-b-xl p-4 whitespace-pre-line">
           {answer}
-        </p>
+        </div>
       </div>
     </article>
   );

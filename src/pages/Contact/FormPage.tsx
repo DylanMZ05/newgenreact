@@ -15,7 +15,7 @@ const FormPage: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
-    setErrorMsg(""); // Limpiar error cuando el usuario escribe
+    setErrorMsg("");
   };
 
   const sendToWhatsApp = () => {
@@ -26,7 +26,7 @@ const FormPage: React.FC = () => {
       return;
     }
 
-    const encodedMessage = encodeURIComponent(
+    const message = encodeURIComponent(
       `Hello, I'm speaking to you from the website!\n\n` +
       `• *Name:* ${name}\n` +
       `• *Phone:* ${phone}\n` +
@@ -35,28 +35,40 @@ const FormPage: React.FC = () => {
       `${notes ? `🔹 *Notes:* ${notes}` : "*Notes:* None"}`
     );
 
-    window.open(`https://wa.me/13463800845?text=${encodedMessage}`, "_blank");
+    window.open(`https://wa.me/13463800845?text=${message}`, "_blank");
   };
 
   return (
     <section
-      className="h-content min-h-screen flex flex-col items-center justify-center bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] bg-cover bg-center"
-      aria-labelledby="contact-form-title"
+      className="min-h-screen bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] bg-cover bg-center"
+      aria-labelledby="form-title"
     >
       <BlockSection />
 
-      <div className="w-full h-content min-h-[calc(100vh-80px)] bg-black/50 flex items-center justify-center px-4 py-10">
-        <div className="relative bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-          <h2 id="contact-form-title" className="text-2xl font-semibold text-center mb-4">
-            Contact Us!
+      <div className="bg-black/50 min-h-[calc(100vh-80px)] w-full flex items-center justify-center px-4 py-12">
+        <form
+          className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md relative"
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendToWhatsApp();
+          }}
+          noValidate
+          aria-describedby="form-description"
+        >
+          <h2 id="form-title" className="text-2xl font-bold text-center mb-4 text-[#0d4754]">
+            Contact Us
           </h2>
 
-          {errorMsg && <p className="text-red-500 text-sm text-center mb-3">{errorMsg}</p>}
+          {errorMsg && (
+            <p className="text-red-500 text-sm text-center mb-3" role="alert">
+              {errorMsg}
+            </p>
+          )}
 
           <div className="flex flex-col gap-4">
             <input
-              type="text"
               id="name"
+              type="text"
               placeholder="Full Name"
               className="border border-gray-300 rounded-md px-4 py-2"
               value={formData.name}
@@ -67,8 +79,8 @@ const FormPage: React.FC = () => {
             />
 
             <input
-              type="tel"
               id="phone"
+              type="tel"
               placeholder="Phone (Only numbers)"
               className="border border-gray-300 rounded-md px-4 py-2"
               value={formData.phone}
@@ -79,8 +91,8 @@ const FormPage: React.FC = () => {
             />
 
             <input
-              type="email"
               id="email"
+              type="email"
               placeholder="Email (example@example.com)"
               className="border border-gray-300 rounded-md px-4 py-2"
               value={formData.email}
@@ -91,8 +103,8 @@ const FormPage: React.FC = () => {
             />
 
             <input
-              type="text"
               id="zip"
+              type="text"
               placeholder="Zip Code (Only numbers)"
               className="border border-gray-300 rounded-md px-4 py-2"
               value={formData.zip}
@@ -109,18 +121,17 @@ const FormPage: React.FC = () => {
               value={formData.notes}
               onChange={handleChange}
               aria-label="Additional Notes"
-              aria-describedby="notes-description"
-            ></textarea>
+            />
 
             <button
-              onClick={sendToWhatsApp}
-              className="flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-green-600 focus:ring-2 focus:ring-green-500"
+              type="submit"
+              className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-green-500"
               aria-label="Send message via WhatsApp"
             >
-              <FaWhatsapp className="mr-2" /> Send via WhatsApp
+              <FaWhatsapp /> Send via WhatsApp
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   );

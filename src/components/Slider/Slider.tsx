@@ -8,18 +8,21 @@ import "./Slider.css";
 
 interface ImageSliderProps {
   images: string[];
-  withBorderT?: boolean; 
+  withBorderT?: boolean;
   withBorderB?: boolean;
 }
 
-const Slider: React.FC<ImageSliderProps> = ({ images, withBorderT = false, withBorderB = false }) => {
-  // No renderizar si no hay imágenes
+const Slider: React.FC<ImageSliderProps> = ({
+  images,
+  withBorderT = false,
+  withBorderB = false,
+}) => {
   if (images.length === 0) return null;
 
   return (
-    <div 
-      role="region" 
-      aria-label="Image Slider" 
+    <div
+      role="region"
+      aria-label="Image Slider"
       aria-live="polite"
       className={`relative w-full overflow-hidden 
         ${withBorderT ? "border-t-5 border-[#0d4754]" : ""} 
@@ -31,6 +34,7 @@ const Slider: React.FC<ImageSliderProps> = ({ images, withBorderT = false, withB
       <Swiper
         spaceBetween={10}
         navigation={true}
+        pagination={{ clickable: true }}
         modules={[Navigation, Pagination]}
         className="w-full"
         breakpoints={{
@@ -42,12 +46,15 @@ const Slider: React.FC<ImageSliderProps> = ({ images, withBorderT = false, withB
         }}
       >
         {images.map((src, index) => (
-          <SwiperSlide key={index} className="flex items-center justify-center my-1">
-            <img 
-              src={src} 
-              alt={`Project Image ${index + 1}`} 
+          <SwiperSlide
+            key={index}
+            className="flex items-center justify-center my-1"
+          >
+            <img
+              src={src}
+              alt={`Project Image ${index + 1}`}
               className="w-full aspect-square object-cover rounded-lg shadow-lg"
-              loading="lazy" 
+              loading="lazy"
             />
           </SwiperSlide>
         ))}

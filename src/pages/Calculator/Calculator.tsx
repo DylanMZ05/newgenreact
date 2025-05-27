@@ -22,10 +22,10 @@ const Calculator: React.FC = () => {
     >
       <BlockSection />
 
-      <main className="w-full min-h-[calc(100vh-80px)] bg-black/60 flex flex-col lg:flex-row items-center justify-center gap-5 px-3 md:px-[50px] py-10 md:py-[100px]">
+      <main className="w-full min-h-[calc(100vh-80px)] bg-black/60 flex flex-col lg:flex-row items-center justify-center gap-5 px-3 md:px-[50px] py-10 md:py-[100px] md:flex-wrap md:text-center">
         {/* Título principal optimizado */}
-        <div className="w-full">
-          <h1 className="text-white/90 text-3xl md:text-4xl font-bold text-center mb-2 max-w-3xl leading-tight">
+        <div className="w-full text-center">
+          <h1 className="text-white/90 text-3xl md:text-4xl font-bold text-center mb-2 max-w-3xl leading-tight mx-auto">
             Affordable Patio Financing Options in Houston
           </h1>
           <div

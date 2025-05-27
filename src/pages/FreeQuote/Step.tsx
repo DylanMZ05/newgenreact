@@ -162,7 +162,7 @@ const Step: React.FC<StepProps> = ({
                 : "bg-gray-400 text-gray-700 cursor-not-allowed"
             } mt-4`}
           >
-            {allRequiredFieldsFilled ? "Send to WhatsApp 📩" : "Complete all fields"}
+            {allRequiredFieldsFilled ? "Send to WhatsApp \ud83d\udce9" : "Complete all fields"}
           </button>
         </div>
       ) : (
