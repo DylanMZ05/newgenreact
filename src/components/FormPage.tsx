@@ -1,8 +1,5 @@
-import { useState, lazy, Suspense } from "react";
-
-const FaWhatsapp = lazy(() =>
-  import("react-icons/fa").then((mod) => ({ default: mod.FaWhatsapp }))
-);
+import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const FormPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +14,7 @@ const FormPage: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
-    setErrorMsg("");
+    setErrorMsg(""); // Limpiar error cuando el usuario escribe
   };
 
   const sendToWhatsApp = () => {
@@ -41,7 +38,7 @@ const FormPage: React.FC = () => {
   };
 
   return (
-    <section
+    <section 
       className="h-screen flex flex-col items-center justify-center 
       bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] 
       bg-cover bg-center relative"
@@ -68,6 +65,7 @@ const FormPage: React.FC = () => {
             autoComplete="name"
             aria-label="Full Name"
           />
+
           <input
             type="tel"
             id="phone"
@@ -79,6 +77,7 @@ const FormPage: React.FC = () => {
             autoComplete="tel"
             aria-label="Phone Number"
           />
+
           <input
             type="email"
             id="email"
@@ -90,6 +89,7 @@ const FormPage: React.FC = () => {
             autoComplete="email"
             aria-label="Email Address"
           />
+
           <input
             type="text"
             id="zip"
@@ -101,6 +101,7 @@ const FormPage: React.FC = () => {
             autoComplete="postal-code"
             aria-label="Zip Code"
           />
+
           <textarea
             id="notes"
             placeholder="Notes (Optional)"
@@ -108,6 +109,7 @@ const FormPage: React.FC = () => {
             value={formData.notes}
             onChange={handleChange}
             aria-label="Additional Notes"
+            aria-describedby="notes-description"
           ></textarea>
 
           <button
@@ -115,10 +117,7 @@ const FormPage: React.FC = () => {
             className="flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-green-600 focus:ring-2 focus:ring-green-500"
             aria-label="Send message via WhatsApp"
           >
-            <Suspense fallback={<span />}>
-              <FaWhatsapp className="mr-2" />
-            </Suspense>
-            Send via WhatsApp
+            <FaWhatsapp className="mr-2" /> Send via WhatsApp
           </button>
         </div>
       </div>

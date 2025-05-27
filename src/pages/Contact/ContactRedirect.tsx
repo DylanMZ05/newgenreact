@@ -30,30 +30,26 @@ const ContactRedirect = () => {
 
   return (
     <>
-      {/* Background Image + Overlay */}
       <div
         role="region"
         aria-label="Contact options"
         className="bg-[url('/assets/images/Products/Patios&Pergolas/Attached/20.webp')] bg-cover bg-center"
       >
         <BlockSection />
-
-        <main className="bg-black/60 w-full min-h-[calc(100vh-80px)] flex flex-col items-center justify-center px-6 py-12">
-          {/* Title */}
+        <main className="bg-black/60 w-full min-h-[calc(100vh-80px)] flex flex-col items-center justify-center px-4 py-10">
           <h1 className="text-white/90 text-3xl md:text-4xl font-bold text-center mb-2 max-w-3xl leading-tight">
             Contact New Gen Patio – Request a FREE Consultation Today
           </h1>
           <div
-            className="bg-orange-500 border border-white/10 h-1 w-16 rounded-full mx-auto mb-8"
-            aria-hidden="true"
+                    className="bg-orange-500 border border-white/10 h-1 w-50 rounded-full mx-auto mb-4"
+                    aria-hidden="true"
           />
 
-          {/* Cards */}
           <section className="grid grid-cols-1 gap-6 w-full max-w-md md:max-w-6xl md:grid-cols-3">
             {cards.map((item, index) => (
               <article
                 key={index}
-                className="bg-white rounded-2xl shadow-md text-center p-6 flex flex-col justify-between h-full transition-transform hover:scale-[1.02]"
+                className="bg-white rounded-2xl shadow-md text-center p-6 flex flex-col justify-between h-full"
               >
                 <div>
                   {item.icon}
@@ -66,14 +62,12 @@ const ContactRedirect = () => {
                   </p>
                 </div>
 
-                {/* Button */}
                 {item.external ? (
                   <a
                     href={item.to}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-6 mx-auto w-fit bg-[#0d4754] text-white font-semibold text-sm px-6 py-2 rounded-full hover:bg-[#0d3254] transition-colors focus:outline-2 focus:outline-orange-500"
-                    aria-label={`Go to ${item.button}`}
                   >
                     {item.button}
                   </a>
@@ -81,7 +75,6 @@ const ContactRedirect = () => {
                   <Link
                     to={item.to}
                     className="mt-6 mx-auto w-fit bg-[#0d4754] text-white font-semibold text-sm px-6 py-2 rounded-full hover:bg-[#0d3254] transition-colors focus:outline-2 focus:outline-orange-500"
-                    aria-label={`Navigate to ${item.button}`}
                   >
                     {item.button}
                   </Link>
@@ -92,7 +85,6 @@ const ContactRedirect = () => {
         </main>
       </div>
 
-      {/* Optional CTA or info below */}
       <MarqueeBanner />
     </>
   );

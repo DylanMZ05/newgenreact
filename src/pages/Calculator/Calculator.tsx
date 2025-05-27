@@ -34,6 +34,7 @@ const Calculator: React.FC = () => {
           />
         </div>
 
+
         {/* Calculadora */}
         <section className="bg-white p-6 shadow-lg rounded-lg max-w-2xl w-full">
           <h2 className="text-2xl font-bold text-[#0d4754] mb-1">

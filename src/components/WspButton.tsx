@@ -1,9 +1,6 @@
-import { useEffect, useState, lazy, Suspense } from "react";
+import { useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
-const FaWhatsapp = lazy(() =>
-  import("react-icons/fa").then((mod) => ({ default: mod.FaWhatsapp }))
-);
 
 const WhatsAppButton = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -62,9 +59,7 @@ const WhatsAppButton = () => {
                   hover:bg-green-600 transition duration-300 flex items-center justify-center 
                   w-14 h-14 focus:ring-2 focus:ring-green-300 border border-black/10 z-[2000] cursor-pointer"
       >
-        <Suspense fallback={<span />}>
-          <FaWhatsapp size={28} />
-        </Suspense>
+        <FaWhatsapp size={28} />
       </button>
     </>
   );

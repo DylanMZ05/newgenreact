@@ -25,21 +25,19 @@ const formatTextWithStyles = (text: string) => {
   });
 };
 
-interface BlogPostProps {
+const BlogPost: React.FC<{
   title: string;
   subtitle: string;
-  content: (
-    | { text: string }
-    | { image: string }
-    | { link: { to: string; label: string } }
-    | { inlineText: ({ text?: string; link?: { to: string; label: string } })[] }
-  )[];
+  content: ({
+    text?: string;
+    image?: string;
+    link?: { to: string; label: string };
+    inlineText?: ({ text?: string; link?: { to: string; label: string } })[];
+  })[];
   imageUrl: string;
   date: string;
-}
-
-const BlogPost: React.FC<BlogPostProps> = ({ title, subtitle, content, imageUrl, date }) => {
-  const scrollToTop = useScrollToTop();
+}> = ({ title, subtitle, content, imageUrl, date }) => {
+  const scrollToTop = useScrollToTop(); // ✅ usás el hook acá
 
   const formattedDate = date
     ? new Date(date).toLocaleDateString("en-US", {
@@ -58,7 +56,6 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, subtitle, content, imageUrl,
   return (
     <>
       <BlockSection />
-
       <section>
         <img
           src={resolvedImageUrl}
@@ -78,13 +75,16 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, subtitle, content, imageUrl,
           </header>
 
           {content.map((item, index) => {
-            if ("text" in item) {
+            if (item.text) {
               return (
-                <p key={index} className="text-gray-700 mt-4 whitespace-pre-line">
+                <p
+                  key={index}
+                  className="text-gray-700 mt-4 whitespace-pre-line"
+                >
                   {formatTextWithStyles(item.text)}
                 </p>
               );
-            } else if ("image" in item) {
+            } else if (item.image) {
               return (
                 <img
                   key={index}
@@ -92,10 +92,12 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, subtitle, content, imageUrl,
                   alt={`Blog image ${index + 1}`}
                   loading="lazy"
                   className="w-full object-cover aspect-[2/1] rounded-lg mt-4"
-                  onError={(e) => (e.currentTarget.src = `${baseUrl}${defaultImage}`)}
+                  onError={(e) =>
+                    (e.currentTarget.src = `${baseUrl}${defaultImage}`)
+                  }
                 />
               );
-            } else if ("link" in item) {
+            } else if (item.link) {
               const { to, label } = item.link;
               return (
                 <p key={index} className="mt-4">
@@ -103,20 +105,17 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, subtitle, content, imageUrl,
                     to={to}
                     onClick={scrollToTop}
                     className={`text-blue-600 font-bold hover:text-blue-900 ${
-                      label.startsWith("****")
-                        ? "text-3xl block text-black"
-                        : label.startsWith("***")
-                        ? "text-xl block text-black"
-                        : label.startsWith("**")
-                        ? "font-semibold text-black/90"
-                        : ""
+                      label.startsWith("****") ? "text-3xl block text-black" :
+                      label.startsWith("***") ? "text-xl block text-black" :
+                      label.startsWith("**") ? "font-semibold text-black/90" :
+                      ""
                     }`}
                   >
                     {label.replace(/\*/g, "")}
                   </Link>
                 </p>
               );
-            } else if ("inlineText" in item) {
+            } else if (item.inlineText) {
               return (
                 <p key={index} className="text-gray-700 mt-4">
                   {item.inlineText.map((part, i) => {
@@ -140,7 +139,6 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, subtitle, content, imageUrl,
                 </p>
               );
             }
-
             return null;
           })}
 

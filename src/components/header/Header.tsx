@@ -1,12 +1,9 @@
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaChevronUp } from "react-icons/fa"; // Ícono de flecha
 import useScroll from "./useScroll";
 import "../../App.css";
 import useScrollToTop from "../../hooks/scrollToTop";
-
-const FaChevronUp = lazy(() =>
-  import("react-icons/fa").then((mod) => ({ default: mod.FaChevronUp }))
-);
 
 const Header: React.FC = () => {
   const scrollToTop = useScrollToTop();
@@ -42,6 +39,7 @@ const Header: React.FC = () => {
       role="banner"
     >
       <div className="flex justify-between items-center px-4 xl:px-15">
+        {/* Logo */}
         <div className="flex items-center">
           <Link to="/" aria-label="Home" onClick={scrollToTop}>
             <img
@@ -61,10 +59,12 @@ const Header: React.FC = () => {
           </div>
         </div>
 
+        {/* Menú principal */}
         <nav aria-label="Main Menu" role="navigation" className="hidden lg:flex">
           <ul className="flex justify-between items-center space-x-10">
             {sectionIds.map((id) => (
               id === "our-promise" ? (
+                // Dropdown para "Our Promise"
                 <li
                   key={id}
                   className="relative"
@@ -77,13 +77,12 @@ const Header: React.FC = () => {
                   }}
                 >
                   <button className={`text-xl transition-all duration-150 font-neutral flex items-center gap-1 cursor-pointer ${
-                    isScrolled ? "text-black hover:text-orange-500" : "text-white hover:text-orange-400"
-                  }`}>
+                      isScrolled ? "text-black hover:text-orange-500" : "text-white hover:text-orange-400"
+                    }`}>
                     Our Promise
-                    <Suspense fallback={<span />}>
-                      <FaChevronUp className={`${dropdownOpen ? "rotate-180" : ""}`} />
-                    </Suspense>
+                    <FaChevronUp className={`${dropdownOpen ? "rotate-180" : ""}`} />
                   </button>
+                  {/* Menú desplegable */}
                   {dropdownOpen && (
                     <div 
                       className="absolute left-0 mt-2 bg-white shadow-lg w-48"
@@ -127,7 +126,7 @@ const Header: React.FC = () => {
           </ul>
         </nav>
 
-        {/* Botón menú hamburguesa */}
+        {/* Botón de menú hamburguesa para móviles */}
         <button
           className="lg:hidden focus:outline-none absolute top-5 right-5 z-60 cursor-pointer pointer-events-auto"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -135,14 +134,17 @@ const Header: React.FC = () => {
           onClick={() => setMenuOpen((prev) => !prev)}
         >
           <span className={`block w-8 h-1 my-1.5 rounded transition-all duration-300 ${
-            isScrolled ? "bg-black" : "bg-white"
-          } ${menuOpen ? "rotate-45 translate-y-2.5" : ""}`} />
+              isScrolled ? "bg-black" : "bg-white"
+            } ${menuOpen ? "rotate-45 translate-y-2.5" : ""}`}
+          ></span>
           <span className={`block w-8 h-1 my-1.5 rounded transition-all duration-300 ${
-            isScrolled ? "bg-black" : "bg-white"
-          } ${menuOpen ? "opacity-0" : ""}`} />
+              isScrolled ? "bg-black" : "bg-white"
+            } ${menuOpen ? "opacity-0" : ""}`}
+          ></span>
           <span className={`block w-8 h-1 my-1.5 rounded transition-all duration-300 ${
-            isScrolled ? "bg-black" : "bg-white"
-          } ${menuOpen ? "-rotate-45 -translate-y-2.5" : ""}`} />
+              isScrolled ? "bg-black" : "bg-white"
+            } ${menuOpen ? "-rotate-45 -translate-y-2.5" : ""}`}
+          ></span>
         </button>
 
         {/* Menú móvil */}
@@ -152,13 +154,14 @@ const Header: React.FC = () => {
             menuOpen ? "translate-x-0 opacity-100 visible" : "-translate-x-full opacity-0 invisible"
           }`}
         >
+          {/* Logo - Cierra el menú y el desplegable */}
           <Link 
             to="/" 
             aria-label="Home" 
             onClick={() => { 
               scrollToTop(); 
               setMenuOpen(false); 
-              setMobileDropdownOpen(false);
+              setMobileDropdownOpen(false); // Cierra el desplegable también
             }}
           >
             <img
@@ -179,9 +182,7 @@ const Header: React.FC = () => {
                   onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
                 >
                   Our Promise
-                  <Suspense fallback={<span />}>
-                    <FaChevronUp className={`${mobileDropdownOpen ? "rotate-180" : ""}`} />
-                  </Suspense>
+                  <FaChevronUp className={`${mobileDropdownOpen ? " rotate-180" : ""}`} />
                 </button>
 
                 {mobileDropdownOpen && (
@@ -191,7 +192,7 @@ const Header: React.FC = () => {
                       onClick={() => { 
                         scrollToTop(); 
                         setMenuOpen(false); 
-                        setMobileDropdownOpen(false);
+                        setMobileDropdownOpen(false); // Cierra el desplegable
                       }} 
                       className="block py-2 text-lg hover:text-orange-500"
                     >
@@ -202,7 +203,7 @@ const Header: React.FC = () => {
                       onClick={() => { 
                         scrollToTop(); 
                         setMenuOpen(false); 
-                        setMobileDropdownOpen(false);
+                        setMobileDropdownOpen(false); // Cierra el desplegable
                       }} 
                       className="block py-2 text-lg hover:text-orange-500"
                     >
@@ -219,7 +220,7 @@ const Header: React.FC = () => {
                   handleClick(id);
                   scrollToTop();
                   setMenuOpen(false);
-                  setMobileDropdownOpen(false);
+                  setMobileDropdownOpen(false); // Cierra el desplegable
                 }} 
                 className="text-2xl transition-all duration-150 hover:text-orange-500"
               >

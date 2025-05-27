@@ -69,17 +69,20 @@ const FAQ: React.FC = () => {
   return (
     <section
       id="faq"
-      aria-labelledby="faq-title"
+      aria-labelledby="faq-heading"
       className="flex flex-col items-center justify-center py-12 px-6 border-t border-black/20 overflow-hidden"
     >
-      <header className="text-center mb-8">
-        <h2 id="faq-title" className="font-semibold text-2xl text-[#0d4754]">
+      <header className="text-center">
+        <p
+          id="faq-heading"
+          className="font-semibold text-2xl text-[#0d4754]"
+        >
           FAQs
-        </h2>
+        </p>
         <h3 className="font-semibold text-4xl text-center">
           Frequently Asked Questions
         </h3>
-        <div className="w-24 h-1 bg-[#0d4754] mt-4 mb-5 rounded-full mx-auto" />
+        <div className="w-24 h-1 bg-[#0d4754] mt-4 mb-5 rounded-full mx-auto"></div>
       </header>
 
       <div className="w-full max-w-2xl">
@@ -88,7 +91,7 @@ const FAQ: React.FC = () => {
         ))}
       </div>
 
-      <p className="mt-6 font-normal text-xl text-center">
+      <p className="mt-5 font-normal text-xl text-center">
         Have another question?
         <br />
         No problem,{" "}
@@ -97,7 +100,6 @@ const FAQ: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="text-orange-600 font-semibold hover:underline"
-          aria-label="Contact us on WhatsApp"
         >
           contact us
         </a>

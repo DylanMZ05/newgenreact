@@ -1,11 +1,7 @@
-import React, { useEffect, useState, lazy, Suspense } from "react";
+import React, { useEffect, useState } from "react";
+import { FaInstagram, FaTiktok, FaPinterest, FaFacebookF } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import useScrollToTop from "../../hooks/scrollToTop";
-
-const FaInstagram = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaInstagram })));
-const FaTiktok = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaTiktok })));
-const FaPinterest = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaPinterest })));
-const FaFacebookF = lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaFacebookF })));
 
 const Main: React.FC = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -66,26 +62,18 @@ const Main: React.FC = () => {
 
         {/* Redes sociales */}
         <div className="flex gap-2 mt-2 ml-1">
-          <Suspense fallback={<span />}>
-            <a href="https://www.instagram.com/newgenpatio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FaInstagram className="w-8 h-8 text-white hover:text-pink-500 transition-colors" />
-            </a>
-          </Suspense>
-          <Suspense fallback={<span />}>
-            <a href="https://www.tiktok.com/@newgenpatio" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-              <FaTiktok className="w-8 h-8 text-white hover:text-white/70 transition-colors" />
-            </a>
-          </Suspense>
-          <Suspense fallback={<span />}>
-            <a href="https://www.pinterest.com/newgenpatio/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-              <FaPinterest className="w-8 h-8 text-white hover:text-red-500 transition-colors" />
-            </a>
-          </Suspense>
-          <Suspense fallback={<span />}>
-            <a href="https://www.facebook.com/newgenpatio" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <FaFacebookF className="w-8 h-8 text-white hover:text-blue-500 transition-colors" />
-            </a>
-          </Suspense>
+          <a href="https://www.instagram.com/newgenpatio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <FaInstagram className="w-8 h-8 text-white hover:text-pink-500 transition-colors" />
+          </a>
+          <a href="https://www.tiktok.com/@newgenpatio" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <FaTiktok className="w-8 h-8 text-white hover:text-white/70 transition-colors" />
+          </a>
+          <a href="https://www.pinterest.com/newgenpatio/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+            <FaPinterest className="w-8 h-8 text-white hover:text-red-500 transition-colors" />
+          </a>
+          <a href="https://www.facebook.com/newgenpatio" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <FaFacebookF className="w-8 h-8 text-white hover:text-blue-500 transition-colors" />
+          </a>
         </div>
       </div>
     </section>
