@@ -8,24 +8,23 @@ interface ServicesProps {
 
 const serviceCards = [
   {
-    title: "Covered Patios & Pergolas",
+    title: "Attached Style",
     imageUrl: "assets/images/Products/Patios&Pergolas/Attached/01.webp",
-    link: "/custom-aluminium-pergola-and-cover-patio-houston",
-  },
-    {
-    title: "Outdoor Kitchens",
-    imageUrl: "assets/images/Products/OutdoorKitchen/Modern/01.webp",
-    link: "/outdoor-kitchens-houston",
+    link: "/attached-covered-patio-houston",
   },
   {
-    title: "Additional Services",
-    imageUrl: "assets/images/Products/AdditionalServices/1.webp",
-    link: "/concrete-and-turf-installation-houston",
-    subtitle: "Landscaping | Concrete | Artificial Turf"
-  }
+    title: "Freestanding Style",
+    imageUrl: "assets/images/Products/Patios&Pergolas/Attached/01.webp",
+    link: "/freestanding-covered-patio-houston",
+  },
+    {
+    title: "Cantilever Style",
+    imageUrl: "assets/images/Products/OutdoorKitchen/Modern/01.webp",
+    link: "/cantilever-cover-patio-houston",
+  },
 ];
 
-const Services: React.FC<ServicesProps> = ({ showQuoteButton = true }) => {
+const PatiosAndPergolasCard: React.FC<ServicesProps> = ({ showQuoteButton = true }) => {
   return (
     <section
       id="services"
@@ -33,8 +32,8 @@ const Services: React.FC<ServicesProps> = ({ showQuoteButton = true }) => {
       className="flex flex-col items-center justify-center py-12 px-6"
     >
       <header className="text-center max-w-2xl">
-        <p className="text-2xl font-semibold text-[#0d4754]">OUR SERVICES</p>
-        <h2 id="services-heading" className="text-4xl font-semibold">What We Offer</h2>
+        <p className="text-2xl font-semibold text-[#0d4754]">PATIOS AND PERGOLAS</p>
+        <h2 id="services-heading" className="text-4xl font-semibold">Patios and Pergolas for Outdoor Spaces</h2>
         <div className="w-24 h-1 bg-[#0d4754] my-3 rounded-full mx-auto"></div>
         <p className="text-center font-semibold text-black/80 mb-6 max-w-2xl">
           We craft premium patios, pergolas, and outdoor kitchens designed for style, durability, and functionality.
@@ -48,4 +47,4 @@ const Services: React.FC<ServicesProps> = ({ showQuoteButton = true }) => {
   );
 };
 
-export default Services;
+export default PatiosAndPergolasCard;

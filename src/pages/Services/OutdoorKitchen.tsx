@@ -1,10 +1,9 @@
 import React from "react";
-import Slider from "../../components/Slider/Slider";
 import MarqueeBanner from "../../components/MarqueeBanner";
 import ImgTxtSection from "../../components/ImgTxtSection";
 import SectionBlock from "../../components/SectionBlock";
 import WhyUsLink from "./components/WhyUsLink";
-import Services from "../Home/services/services";
+import OutdorKitchenCard from "../Home/services/OutdoorKitchenCards";
 
 import FreeQuoteButton from "../../components/FreeQuoteButton";
 
@@ -20,30 +19,15 @@ const sectionsData = [
 
 const backgroundImage = "assets/images/Products/OutdoorKitchen/Traditional/07.webp";
 
-// Generación dinámica de imágenes
-const generateImagePaths = (path: string, count: number) =>
-  Array.from({ length: count }, (_, i) => `${path}/${(i + 1).toString().padStart(2, "0")}.webp`);
-
-const imagesModern = generateImagePaths("assets/images/Products/OutdoorKitchen/Modern", 18);
-const imagesTraditional = generateImagePaths("assets/images/Products/OutdoorKitchen/Traditional", 11);
-
 const OutdoorKitchen: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-100" aria-labelledby="outdoor-kitchen-heading">
 
       <SectionBlock sections={sectionsData} />
 
-      {[
-        { title: "Modern Style", images: imagesModern },
-        { title: "Traditional Style", images: imagesTraditional },
-      ].map((section, index) => (
-        <div key={index} className="w-full">
-          <h2 className="text-4xl font-semibold my-5 text-center">{section.title}</h2>
-          <Slider images={section.images} withBorderT withBorderB />
-        </div>
-      ))}
 
       <MarqueeBanner />
+      <OutdorKitchenCard showQuoteButton={false}/>
 
       <div className="pt-8 px-5">
         <h2 className="font-semibold text-3xl mb-3">Why might you need it?</h2>
@@ -93,7 +77,6 @@ const OutdoorKitchen: React.FC = () => {
       </div>
 
       <WhyUsLink backgroundImage={backgroundImage} />
-      <Services showQuoteButton={false}/>
     </section>
   );
 };

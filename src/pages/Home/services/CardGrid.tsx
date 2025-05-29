@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import useScrollToTop from "../../../hooks/scrollToTop";
 
+// =====================
+// TYPES
+// =====================
 type CardOption = {
   title: string;
   imageUrl: string;
@@ -14,9 +17,13 @@ type CardProps = {
   imageUrl: string;
   link?: string;
   options?: CardOption[];
+  subtitle?: string; // <- NUEVO PROP
 };
 
-const Card: React.FC<CardProps> = ({ title, imageUrl, link, options }) => {
+// =====================
+// CARD COMPONENT
+// =====================
+const Card: React.FC<CardProps> = ({ title, imageUrl, link, options, subtitle }) => {
   const navigate = useNavigate();
   const scrollToTop = useScrollToTop();
   const [showSplitView, setShowSplitView] = React.useState(false);
@@ -36,7 +43,6 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, link, options }) => {
     scrollToTop();
   };
 
-  // Cierre al hacer clic fuera
   React.useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
@@ -60,7 +66,7 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, link, options }) => {
       className="card-container relative w-[90vw] md:w-80 rounded-lg shadow-md overflow-hidden cursor-pointer"
       aria-label={`Go to ${title} service`}
     >
-      {/* Imagen de fondo */}
+      {/* Imagen principal */}
       <figure className="w-full h-64 overflow-hidden rounded-lg relative">
         <img
           src={imageUrl}
@@ -72,13 +78,18 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, link, options }) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-3 text-white text-2xl font-semibold"
+          className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-3 text-white"
         >
           <h3 className="text-white text-2xl font-semibold">{title}</h3>
+          {subtitle && (
+            <p className="text-sm text-white/80 leading-tight mt-1">
+              {subtitle}
+            </p>
+          )}
         </motion.figcaption>
       </figure>
 
-      {/* Capa animada que se muestra encima */}
+      {/* Vista dividida si hay opciones */}
       <AnimatePresence>
         {showSplitView && options && options.length === 2 && (
           <motion.div
@@ -117,6 +128,9 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, link, options }) => {
   );
 };
 
+// =====================
+// CARD GRID COMPONENT
+// =====================
 type CardGridProps = {
   cards: CardProps[];
 };

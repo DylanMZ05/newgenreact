@@ -26,6 +26,7 @@ import OutdoorKitchen from "./pages/Services/OutdoorKitchen";
 import ConcreteTurf from "./pages/Services/ConcreteTurf";
 import OutdoorKitchenModern from "./pages/Services/OutdoorKitchenModern";
 import OutdoorKitchenTraditional from "./pages/Services/OutdoorKitchenTraditional";
+import PatiosAndPergolasCard from "./pages/Home/services/PatioAndPergolasCard";
 
 // Calculator
 import Calculator from "./pages/Calculator/Calculator";
@@ -157,10 +158,10 @@ const Layout = memo(() => {
             <BlockSection />
             <SectionBlock sections={sectionsData3} />
             <MarqueeBanner />
+            <PatiosAndPergolasCard />
             {sections.map((section, index) => (
               <ImageTextSection key={index} {...section} />
             ))}
-            <Services />
           </main>
         } />
         <Route path="/our-promise-patio-builders-houston" element={<><BlockSection /><OurPromise /></>} />
